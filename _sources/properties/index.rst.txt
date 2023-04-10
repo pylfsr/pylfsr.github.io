@@ -13,7 +13,7 @@ LFSR Properties: Test 3+1 properties of LFSR
 
 
 
-Test f(x) = x\ :sup:`5`\ + x\ :sup:`2`\ +1 
+Test p(x) = x\ :sup:`5`\ + x\ :sup:`2`\ +1 
 ------------------------------------------
 
 Let's test LFSR [5,3], for 5-bit LFSR, which we know is a primitive polynomial
@@ -57,7 +57,7 @@ Let's test LFSR [5,3], for 5-bit LFSR, which we know is a primitive polynomial
 .. image:: https://raw.githubusercontent.com/nikeshbajaj/Linear_Feedback_Shift_Register/master/images/acorr_test.jpg
 
 
-Test f(x) = x\ :sup:`5`\ + x\ :sup:`1`\ +1 
+Test p(x) = x\ :sup:`5`\ + x\ :sup:`1`\ +1 
 ------------------------------------------
 
 Test LFSR [5,1], for 5-bit LFSR, which we know is ***NOT*** a primitive polynomial

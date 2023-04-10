@@ -7,7 +7,12 @@ Linear Feedback Shift Register: PyLFSR
                  Create your own Pseudo-Random Generator using PyLFSR and test its properties.
    :keywords: lfsr, stream-ciphers, random-generator, linear-feedback-shift-register, galois, a51, galois-lfsr fibona fibonacci-lfsr, open source, software,
 
-<br>
+.. role:: raw-html(raw)
+    :format: html
+
+:raw-html:`<br />`
+
+
 
 .. image:: https://static.pepy.tech/personalized-badge/pylfsr?period=total&units=international_system&left_color=black&right_color=orange&left_text=total-downloads
   :target: https://pepy.tech/project/pylfsr
