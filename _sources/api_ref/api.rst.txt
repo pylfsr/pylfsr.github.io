@@ -1,5 +1,8 @@
-API: LFSR Class
-================
+API References
+==============
+
+LFSR Class
+==========
 
 
 Linear Feedback Shift Register
@@ -71,9 +74,14 @@ seq_bit_index: int, index of shift register for output sequence:
      : seq_bit_index can varies from -M to M-1,for M-bit LFSR. For example 5-bit LFSR, seq_bit_index=-5,-4,-3,-2,-1, 0, 1, 2, 3, 4
      : seq_bit_index=-1, means output sequence is taken out from last Register, -2, second last,
 
+
+
+
+List of Methods
+===============
+
 Methods
 -------
-
 
 Clocking (running LFSR):
 -------
@@ -252,7 +260,7 @@ Deprecated/replaced methods :
 
 
 Attributes
-------------------------
+==========
 
 count : int
   Count the cycle, starts with 0 if counter_start_zero True, else starts with 1

@@ -1,17 +1,15 @@
 
-API Docx
+API Doc
 ========
 
 
+.. .. _basic:
+
+.. Basic examples
+.. --------------
 
 
-.. _basic:
-
-Basic examples
---------------
-
-
-- :doc:`API Class <api>`
+.. - :doc:`API Class <api>`
 
 
 
@@ -24,10 +22,10 @@ Basic examples
 
 
 
-.. _basic:
+.. .. _basic:
 
-Basic examples
---------------
+.. Basic examples
+.. --------------
 
 
-- :doc:`Least squares <basic/least_squares>` `[.ipynb] <https://colab.research.google.com/github/cvxpy/cvxpy/blob/master/examples/notebooks/WWW/least_squares.ipynb>`_
+.. - :doc:`Least squares <basic/least_squares>` `[.ipynb] <https://colab.research.google.com/github/cvxpy/cvxpy/blob/master/examples/notebooks/WWW/least_squares.ipynb>`_

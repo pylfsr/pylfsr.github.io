@@ -6,7 +6,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
-    <title>API: LFSR Class &#8212; PyLFSR 1.0 documentation</title>
+    <title>API References &#8212; PyLFSR 1.0 documentation</title>
     <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
     <link rel="stylesheet" type="text/css" href="../_static/pylfsr_alabaster.css" />
     <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
@@ -17,7 +17,7 @@
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="MATLAB CODE" href="../matlab/index.html" />
-    <link rel="prev" title="API Docx" href="index.html" />
+    <link rel="prev" title="Generators" href="../generators/index.html" />
    
   <link rel="stylesheet" href="../_static/custom.css" type="text/css" />
   
@@ -34,8 +34,11 @@
 
           <div class="body" role="main">
             
-  <section id="api-lfsr-class">
-<h1>API: LFSR Class<a class="headerlink" href="#api-lfsr-class" title="Permalink to this heading">¶</a></h1>
+  <section id="api-references">
+<h1>API References<a class="headerlink" href="#api-references" title="Permalink to this heading">¶</a></h1>
+</section>
+<section id="lfsr-class">
+<h1>LFSR Class<a class="headerlink" href="#lfsr-class" title="Permalink to this heading">¶</a></h1>
 <p>Linear Feedback Shift Register</p>
 <p>Python implementation of LFSR</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">pylfsr</span><span class="o">.</span><span class="n">LFSR</span><span class="p">(</span><span class="n">fpoly</span><span class="o">=</span><span class="p">[</span><span class="mi">5</span><span class="p">,</span> <span class="mi">2</span><span class="p">],</span> <span class="n">initstate</span><span class="o">=</span><span class="s1">&#39;ones&#39;</span><span class="p">,</span>
@@ -92,6 +95,9 @@ Galois: <a class="reference external" href="https://en.wikipedia.org/wiki/Linear
 </dd>
 </dl>
 </section>
+</section>
+<section id="list-of-methods">
+<h1>List of Methods<a class="headerlink" href="#list-of-methods" title="Permalink to this heading">¶</a></h1>
 <section id="methods">
 <h2>Methods<a class="headerlink" href="#methods" title="Permalink to this heading">¶</a></h2>
 </section>
@@ -294,8 +300,9 @@ Galois: <a class="reference external" href="https://en.wikipedia.org/wiki/Linear
 </tbody>
 </table>
 </section>
+</section>
 <section id="attributes">
-<h2>Attributes<a class="headerlink" href="#attributes" title="Permalink to this heading">¶</a></h2>
+<h1>Attributes<a class="headerlink" href="#attributes" title="Permalink to this heading">¶</a></h1>
 <dl class="simple">
 <dt>count<span class="classifier">int</span></dt><dd><p>Count the cycle, starts with 0 if counter_start_zero True, else starts with 1</p>
 </dd>
@@ -322,7 +329,6 @@ period will be 2^M -1</p>
 <dt>feedpoly<span class="classifier">str</span></dt><dd><p>feedback polynomial</p>
 </dd>
 </dl>
-</section>
 </section>
 
 
@@ -367,14 +373,22 @@ period will be 2^M -1</p>
 <li class="toctree-l1"><a class="reference internal" href="../generators/index.html">Generators</a></li>
 </ul>
 <ul class="current">
-<li class="toctree-l1 current"><a class="reference internal" href="index.html">API Doc</a><ul class="current">
-<li class="toctree-l2 current"><a class="reference internal" href="index.html#basic-examples">Basic examples</a><ul class="current">
-<li class="toctree-l3 current"><a class="current reference internal" href="#">API: LFSR Class</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">API References</a></li>
+<li class="toctree-l1"><a class="reference internal" href="#lfsr-class">LFSR Class</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#parameters">Parameters:</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="index.html#id1">Basic examples</a></li>
+<li class="toctree-l1"><a class="reference internal" href="#list-of-methods">List of Methods</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#methods">Methods</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#clocking-running-lfsr">Clocking (running LFSR):</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#setters">Setters :</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#getters">Getters:</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#testing-lfsr-properties">Testing LFSR Properties:</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#displaying-printing">Displaying/printing:</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#deprecated-replaced-methods">Deprecated/replaced methods :</a></li>
 </ul>
 </li>
+<li class="toctree-l1"><a class="reference internal" href="#attributes">Attributes</a></li>
 </ul>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../matlab/index.html">Matlab Code</a></li>
