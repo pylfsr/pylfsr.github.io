@@ -75,21 +75,28 @@ A simple example of generating 5-bit LFSR with feedback polynomial of p(x) = x\ 
 
     state = [0,0,0,1,0]
     fpoly = [5,4,3,2]
-    L = LFSR(fpoly=fpoly,initstate =state, verbose=True)
+    L = LFSR(fpoly=fpoly,initstate =state)
 
     # Generate K-bits
     k=10
     seq_k  = L.runKCycle(k)
 
+    print('10 cycles--> 10 bits')
     print(seq_k)
+
     # Generate bits of one full period.
     # Expected period of LFSR = 2^M-1, for M-bit LFSR).
     seq_full  = L.runFullPeriod()
     # The optimal value for x is stored in `x.value`.
     
+    print('Full period of LFSR = 31-cycles')
     print(seq_full)
 
+10 cycles--> 10 bits
+[0 1 0 0 0 1 1 1 0 1]
 
+Full period of LFSR = 31-cycles
+[0 1 0 0 0 1 1 1 0 1 1 1 1 1 0 0 1 0 0 1 1 0 0 0 0 1 0 1 1 0 1]
 
 
 **Authors/Contacts:**
