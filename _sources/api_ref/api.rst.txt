@@ -1,5 +1,7 @@
 API: LFSR Class
-=========
+================
+
+
 Linear Feedback Shift Register
 
 Python implementation of LFSR
@@ -7,7 +9,8 @@ Python implementation of LFSR
 
 ::
   
-  class pylfsr.LFSR(fpoly=[5, 2], initstate='ones', conf='fibonacci', seq_bit_index=-1, 
+  class pylfsr.LFSR(fpoly=[5, 2], initstate='ones', 
+                    conf='fibonacci', seq_bit_index=-1, 
                      verbose=False, counter_start_zero=True)
   
 
@@ -73,7 +76,7 @@ Methods
 
 
 Clocking (running LFSR):
-~~~~~~~~~
+-------
 
 .. list-table:: **Clocking (running LFSR)**
    :widths: 30 50
@@ -91,7 +94,8 @@ Clocking (running LFSR):
 
 
 Setters :
-~~~~~~~~~
+-------
+
 
 .. list-table:: **Setting parameters**
    :widths: 30 50
@@ -112,7 +116,8 @@ Setters :
 
 
 Getters:
-~~~~~~~~~
+-------
+
 
 .. list-table:: **Fetching Attributes**
    :widths: 30 50
@@ -143,7 +148,8 @@ Getters:
 
 
 Testing LFSR Properties:
-~~~~~~~~~~~~~~~~~~~~~~~~
+------------------------
+
 
 .. list-table:: **Testing Properties of LFSR**
    :widths: 30 80
@@ -166,7 +172,7 @@ Testing LFSR Properties:
 
 
 Displaying/printing:
-~~~~~~~~~~~~~~~~
+------------------------
 
 .. list-table:: **Displaying/printing**
    :widths: 30 80
@@ -188,7 +194,7 @@ Displaying/printing:
 
 
 Deprecated/replaced methods :
-~~~~~~~~~~~~~~~~~~~~~~~~~~~
+------------------------
 
 *These methods will be deprecated in future version 1.0.7*
 
@@ -246,7 +252,8 @@ Deprecated/replaced methods :
 
 
 Attributes
-----------
+------------------------
+
 count : int
   Count the cycle, starts with 0 if counter_start_zero True, else starts with 1
 

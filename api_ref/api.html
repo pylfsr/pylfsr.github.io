@@ -16,7 +16,7 @@
     <script src="../_static/doctools.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="API: Supporting Functions" href="api_fun.html" />
+    <link rel="next" title="MATLAB CODE" href="../matlab/index.html" />
     <link rel="prev" title="API Docx" href="index.html" />
    
   <link rel="stylesheet" href="../_static/custom.css" type="text/css" />
@@ -38,7 +38,8 @@
 <h1>API: LFSR Class<a class="headerlink" href="#api-lfsr-class" title="Permalink to this heading">¶</a></h1>
 <p>Linear Feedback Shift Register</p>
 <p>Python implementation of LFSR</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">pylfsr</span><span class="o">.</span><span class="n">LFSR</span><span class="p">(</span><span class="n">fpoly</span><span class="o">=</span><span class="p">[</span><span class="mi">5</span><span class="p">,</span> <span class="mi">2</span><span class="p">],</span> <span class="n">initstate</span><span class="o">=</span><span class="s1">&#39;ones&#39;</span><span class="p">,</span> <span class="n">conf</span><span class="o">=</span><span class="s1">&#39;fibonacci&#39;</span><span class="p">,</span> <span class="n">seq_bit_index</span><span class="o">=-</span><span class="mi">1</span><span class="p">,</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">pylfsr</span><span class="o">.</span><span class="n">LFSR</span><span class="p">(</span><span class="n">fpoly</span><span class="o">=</span><span class="p">[</span><span class="mi">5</span><span class="p">,</span> <span class="mi">2</span><span class="p">],</span> <span class="n">initstate</span><span class="o">=</span><span class="s1">&#39;ones&#39;</span><span class="p">,</span>
+                  <span class="n">conf</span><span class="o">=</span><span class="s1">&#39;fibonacci&#39;</span><span class="p">,</span> <span class="n">seq_bit_index</span><span class="o">=-</span><span class="mi">1</span><span class="p">,</span>
                    <span class="n">verbose</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">counter_start_zero</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
 </pre></div>
 </div>
@@ -93,8 +94,9 @@ Galois: <a class="reference external" href="https://en.wikipedia.org/wiki/Linear
 </section>
 <section id="methods">
 <h2>Methods<a class="headerlink" href="#methods" title="Permalink to this heading">¶</a></h2>
+</section>
 <section id="clocking-running-lfsr">
-<h3>Clocking (running LFSR):<a class="headerlink" href="#clocking-running-lfsr" title="Permalink to this heading">¶</a></h3>
+<h2>Clocking (running LFSR):<a class="headerlink" href="#clocking-running-lfsr" title="Permalink to this heading">¶</a></h2>
 <table class="docutils align-default" id="id1">
 <caption><span class="caption-text"><strong>Clocking (running LFSR)</strong></span><a class="headerlink" href="#id1" title="Permalink to this table">¶</a></caption>
 <colgroup>
@@ -120,7 +122,7 @@ Galois: <a class="reference external" href="https://en.wikipedia.org/wiki/Linear
 </table>
 </section>
 <section id="setters">
-<h3>Setters :<a class="headerlink" href="#setters" title="Permalink to this heading">¶</a></h3>
+<h2>Setters :<a class="headerlink" href="#setters" title="Permalink to this heading">¶</a></h2>
 <table class="docutils align-default" id="id2">
 <caption><span class="caption-text"><strong>Setting parameters</strong></span><a class="headerlink" href="#id2" title="Permalink to this table">¶</a></caption>
 <colgroup>
@@ -152,7 +154,7 @@ Galois: <a class="reference external" href="https://en.wikipedia.org/wiki/Linear
 </table>
 </section>
 <section id="getters">
-<h3>Getters:<a class="headerlink" href="#getters" title="Permalink to this heading">¶</a></h3>
+<h2>Getters:<a class="headerlink" href="#getters" title="Permalink to this heading">¶</a></h2>
 <table class="docutils align-default" id="id3">
 <caption><span class="caption-text"><strong>Fetching Attributes</strong></span><a class="headerlink" href="#id3" title="Permalink to this table">¶</a></caption>
 <colgroup>
@@ -199,7 +201,7 @@ Galois: <a class="reference external" href="https://en.wikipedia.org/wiki/Linear
 </table>
 </section>
 <section id="testing-lfsr-properties">
-<h3>Testing LFSR Properties:<a class="headerlink" href="#testing-lfsr-properties" title="Permalink to this heading">¶</a></h3>
+<h2>Testing LFSR Properties:<a class="headerlink" href="#testing-lfsr-properties" title="Permalink to this heading">¶</a></h2>
 <table class="docutils align-default" id="id4">
 <caption><span class="caption-text"><strong>Testing Properties of LFSR</strong></span><a class="headerlink" href="#id4" title="Permalink to this table">¶</a></caption>
 <colgroup>
@@ -231,7 +233,7 @@ Galois: <a class="reference external" href="https://en.wikipedia.org/wiki/Linear
 </table>
 </section>
 <section id="displaying-printing">
-<h3>Displaying/printing:<a class="headerlink" href="#displaying-printing" title="Permalink to this heading">¶</a></h3>
+<h2>Displaying/printing:<a class="headerlink" href="#displaying-printing" title="Permalink to this heading">¶</a></h2>
 <table class="docutils align-default" id="id5">
 <caption><span class="caption-text"><strong>Displaying/printing</strong></span><a class="headerlink" href="#id5" title="Permalink to this table">¶</a></caption>
 <colgroup>
@@ -263,7 +265,7 @@ Galois: <a class="reference external" href="https://en.wikipedia.org/wiki/Linear
 </table>
 </section>
 <section id="deprecated-replaced-methods">
-<h3>Deprecated/replaced methods :<a class="headerlink" href="#deprecated-replaced-methods" title="Permalink to this heading">¶</a></h3>
+<h2>Deprecated/replaced methods :<a class="headerlink" href="#deprecated-replaced-methods" title="Permalink to this heading">¶</a></h2>
 <p><em>These methods will be deprecated in future version 1.0.7</em></p>
 <table class="docutils align-default" id="id6">
 <caption><span class="caption-text"><strong>Deprecated methods for future version</strong></span><a class="headerlink" href="#id6" title="Permalink to this table">¶</a></caption>
@@ -291,7 +293,6 @@ Galois: <a class="reference external" href="https://en.wikipedia.org/wiki/Linear
 </tr>
 </tbody>
 </table>
-</section>
 </section>
 <section id="attributes">
 <h2>Attributes<a class="headerlink" href="#attributes" title="Permalink to this heading">¶</a></h2>
@@ -369,7 +370,6 @@ period will be 2^M -1</p>
 <li class="toctree-l1 current"><a class="reference internal" href="index.html">API Doc</a><ul class="current">
 <li class="toctree-l2 current"><a class="reference internal" href="index.html#basic-examples">Basic examples</a><ul class="current">
 <li class="toctree-l3 current"><a class="current reference internal" href="#">API: LFSR Class</a></li>
-<li class="toctree-l3"><a class="reference internal" href="api_fun.html">API: Supporting Functions</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="index.html#id1">Basic examples</a></li>

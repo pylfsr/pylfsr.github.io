@@ -118,7 +118,7 @@ when setting *counter_start_zero = False*, there will be one extra bit, since fi
 Visualise 3-bit LFSR 
 --------------------
 
-**At each step, with default *counter_start_zero = True**
+**At each step, with default *counter_start_zero = True* **
 
 ::
   
@@ -157,7 +157,7 @@ Visualise 3-bit LFSR
   
   
 
-**At each step, with default *counter_start_zero = False* *
+**At each step, with default *counter_start_zero = False* **
 
 ::
   

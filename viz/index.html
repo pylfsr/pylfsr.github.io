@@ -132,7 +132,7 @@ when setting <em>counter_start_zero = False</em>, there will be one extra bit, s
 </section>
 <section id="visualise-3-bit-lfsr">
 <h2>Visualise 3-bit LFSR<a class="headerlink" href="#visualise-3-bit-lfsr" title="Permalink to this heading">¶</a></h2>
-<p><strong>At each step, with default *counter_start_zero = True</strong></p>
+<p><a href="#id1"><span class="problematic" id="id2">**</span></a>At each step, with default <em>counter_start_zero = True</em> **</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">state</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">]</span>
 <span class="n">fpoly</span> <span class="o">=</span> <span class="p">[</span><span class="mi">3</span><span class="p">,</span><span class="mi">2</span><span class="p">]</span>
 <span class="n">L</span> <span class="o">=</span> <span class="n">LFSR</span><span class="p">(</span><span class="n">initstate</span><span class="o">=</span><span class="n">state</span><span class="p">,</span><span class="n">fpoly</span><span class="o">=</span><span class="n">fpoly</span><span class="p">)</span>
@@ -166,7 +166,7 @@ when setting <em>counter_start_zero = False</em>, there will be one extra bit, s
 <span class="n">Output</span><span class="p">:</span>  <span class="p">[</span><span class="mi">1</span> <span class="mi">1</span> <span class="mi">1</span> <span class="mi">0</span> <span class="mi">0</span> <span class="mi">1</span> <span class="mi">0</span> <span class="mi">1</span> <span class="mi">1</span> <span class="mi">1</span> <span class="mi">0</span> <span class="mi">0</span> <span class="mi">1</span> <span class="mi">0</span> <span class="mi">1</span><span class="p">]</span>
 </pre></div>
 </div>
-<p><a href="#id1"><span class="problematic" id="id2">**</span></a>At each step, with default <em>counter_start_zero = False</em> *</p>
+<p><a href="#id3"><span class="problematic" id="id4">**</span></a>At each step, with default <em>counter_start_zero = False</em> **</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">state</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">]</span>
 <span class="n">fpoly</span> <span class="o">=</span> <span class="p">[</span><span class="mi">3</span><span class="p">,</span><span class="mi">2</span><span class="p">]</span>
 <span class="n">L</span> <span class="o">=</span> <span class="n">LFSR</span><span class="p">(</span><span class="n">initstate</span><span class="o">=</span><span class="n">state</span><span class="p">,</span><span class="n">fpoly</span><span class="o">=</span><span class="n">fpoly</span><span class="p">,</span><span class="n">counter_start_zero</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>

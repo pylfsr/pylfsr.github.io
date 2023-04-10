@@ -10,7 +10,10 @@ Linear Feedback Shift Register: PyLFSR
 .. role:: raw-html(raw)
     :format: html
 
+
 :raw-html:`<br />`
+
+:raw-html:`<h3><a href="http://PyLFSR.github.io" target="_blank">Github Page</a>  | <a href="https://github.com/Nikeshbajaj/Linear_Feedback_Shift_Register/discussions" target="_blank">Discussion Forum</a> | <a href="https://github.com/Nikeshbajaj/Linear_Feedback_Shift_Register" target="_blank">Github</a></h3>`
 
 
 
@@ -89,11 +92,20 @@ A simple example of generating 5-bit LFSR with feedback polynomial of p(x) = x\ 
 
 
 
-**Info:**
+**Authors/Contacts:**
 
   * **Authors**: Nikesh Bajaj, Jesús Requena Carrión
   * **Version**: 1.0.7 | 03/01/2023
   * **Homepage**   : https://pylfsr.github.io
+
+**Feedback/Contact/Contribute**
+
+.. include:: contacts.rst
+
+
+
+:raw-html:`<h3><a href="http://PyLFSR.github.io" target="_blank">Github Page</a>  | <a href="https://github.com/Nikeshbajaj/Linear_Feedback_Shift_Register/discussions" target="_blank">Discussion Forum</a> | <a href="https://github.com/Nikeshbajaj/Linear_Feedback_Shift_Register" target="_blank">Github</a></h3>`
+
 
 
 .. toctree::
@@ -143,5 +155,10 @@ A simple example of generating 5-bit LFSR with feedback polynomial of p(x) = x\ 
    :maxdepth: 3
 
    Matlab Code <matlab/index>
+
+
+
+
+
 
 
