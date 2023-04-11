@@ -16,8 +16,8 @@
     <script src="../_static/doctools.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="API Docx" href="../api_ref/index.html" />
-    <link rel="prev" title="Displaying &amp; Visualization" href="../viz/index.html" />
+    <link rel="next" title="API References" href="../api_ref/api.html" />
+    <link rel="prev" title="List of Methods" href="../methods/index.html" />
    
   <link rel="stylesheet" href="../_static/custom.css" type="text/css" />
   
@@ -35,9 +35,9 @@
           <div class="body" role="main">
             
   <section id="generators">
-<h1><strong>Generators</strong><a class="headerlink" href="#generators" title="Permalink to this heading">¶</a></h1>
+<h1>Generators<a class="headerlink" href="#generators" title="Permalink to this heading">¶</a></h1>
 <section id="a5-1-gsm-stream-cipher-generator">
-<h2><strong>A5/1 GSM Stream cipher generator</strong><a class="headerlink" href="#a5-1-gsm-stream-cipher-generator" title="Permalink to this heading">¶</a></h2>
+<h2>A5/1 GSM Stream cipher generator<a class="headerlink" href="#a5-1-gsm-stream-cipher-generator" title="Permalink to this heading">¶</a></h2>
 <p>Ref: <a class="reference external" href="https://en.wikipedia.org/wiki/A5/1">https://en.wikipedia.org/wiki/A5/1</a></p>
 <img alt="https://upload.wikimedia.org/wikipedia/commons/5/5e/A5-1_GSM_cipher.svg" src="https://upload.wikimedia.org/wikipedia/commons/5/5e/A5-1_GSM_cipher.svg" /><p>Image Socuce: <a class="reference external" href="https://en.wikipedia.org/wiki/A5/1">https://en.wikipedia.org/wiki/A5/1</a></p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
@@ -66,7 +66,7 @@
 </div>
 </section>
 <section id="enhanced-a5-1">
-<h2><strong>Enhanced A5/1</strong><a class="headerlink" href="#enhanced-a5-1" title="Permalink to this heading">¶</a></h2>
+<h2>Enhanced A5/1<a class="headerlink" href="#enhanced-a5-1" title="Permalink to this heading">¶</a></h2>
 <p>Reference Article: <strong>Enhancement of A5/1</strong>: <a class="reference external" href="https://doi.org/10.1109/ETNCC.2011.5958486">https://doi.org/10.1109/ETNCC.2011.5958486</a></p>
 <a class="reference internal image-reference" href="https://raw.githubusercontent.com/nikeshbajaj/Linear_Feedback_Shift_Register/master/images/Enhanced_A51.png"><img alt="https://raw.githubusercontent.com/nikeshbajaj/Linear_Feedback_Shift_Register/master/images/Enhanced_A51.png" src="https://raw.githubusercontent.com/nikeshbajaj/Linear_Feedback_Shift_Register/master/images/Enhanced_A51.png" style="width: 70%;" /></a>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># Three LFSRs initialzed with &#39;ones&#39; though they are intialized with encription key</span>
@@ -82,7 +82,7 @@
 </div>
 </section>
 <section id="geffe-generator">
-<h2><strong>Geffe Generator</strong><a class="headerlink" href="#geffe-generator" title="Permalink to this heading">¶</a></h2>
+<h2>Geffe Generator<a class="headerlink" href="#geffe-generator" title="Permalink to this heading">¶</a></h2>
 <dl class="simple">
 <dt>Ref: Schneier, Bruce. Applied cryptography: protocols, algorithms, and source code in C. john wiley &amp; sons, 2007.</dt><dd><p>Chaper 16</p>
 </dd>
@@ -92,8 +92,11 @@
 <span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
 <span class="kn">from</span> <span class="nn">pylfsr</span> <span class="kn">import</span> <span class="n">Geffe</span><span class="p">,</span> <span class="n">LFSR</span>
 
-<span class="n">kLFSR</span> <span class="o">=</span> <span class="p">[</span><span class="n">LFSR</span><span class="p">(</span><span class="n">initstate</span><span class="o">=</span><span class="s1">&#39;random&#39;</span><span class="p">)</span> <span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">8</span><span class="p">)]</span>  <span class="c1"># List of 8 5-bit LFSRs with default feedback polynomial and random initial state</span>
-<span class="n">cLFSR</span> <span class="o">=</span> <span class="n">LFSR</span><span class="p">(</span><span class="n">initstate</span><span class="o">=</span><span class="s1">&#39;random&#39;</span><span class="p">)</span>                      <span class="c1"># A 5-bit LFSR with for selecting one of 8 output at a time</span>
+<span class="c1"># List of 8 5-bit LFSRs with default feedback polynomial and random initial state</span>
+<span class="n">kLFSR</span> <span class="o">=</span> <span class="p">[</span><span class="n">LFSR</span><span class="p">(</span><span class="n">initstate</span><span class="o">=</span><span class="s1">&#39;random&#39;</span><span class="p">)</span> <span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">8</span><span class="p">)]</span>
+
+<span class="c1"># A 5-bit LFSR with for selecting one of 8 output at a time</span>
+<span class="n">cLFSR</span> <span class="o">=</span> <span class="n">LFSR</span><span class="p">(</span><span class="n">initstate</span><span class="o">=</span><span class="s1">&#39;random&#39;</span><span class="p">)</span>
 
 <span class="n">GG</span> <span class="o">=</span> <span class="n">Geffe</span><span class="p">(</span><span class="n">kLFSR_list</span><span class="o">=</span><span class="n">kLFSR</span><span class="p">,</span> <span class="n">cLFSR</span><span class="o">=</span><span class="n">cLFSR</span><span class="p">)</span>
 
@@ -148,16 +151,22 @@
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../viz/index.html">Visualisation</a></li>
 </ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../methods/index.html">List of Methods</a></li>
+</ul>
 <ul class="current">
 <li class="toctree-l1 current"><a class="current reference internal" href="#">Generators</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="#a5-1-gsm-stream-cipher-generator"><strong>A5/1 GSM Stream cipher generator</strong></a></li>
-<li class="toctree-l2"><a class="reference internal" href="#enhanced-a5-1"><strong>Enhanced A5/1</strong></a></li>
-<li class="toctree-l2"><a class="reference internal" href="#geffe-generator"><strong>Geffe Generator</strong></a></li>
+<li class="toctree-l2"><a class="reference internal" href="#a5-1-gsm-stream-cipher-generator">A5/1 GSM Stream cipher generator</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#enhanced-a5-1">Enhanced A5/1</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#geffe-generator">Geffe Generator</a></li>
 </ul>
 </li>
 </ul>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="../api_ref/index.html">API Doc</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../api_ref/api.html">API References</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../api_ref/api.html#lfsr-class">LFSR Class</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../api_ref/api.html#list-of-methods">List of Methods</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../api_ref/api.html#attributes">Attributes</a></li>
 </ul>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../matlab/index.html">Matlab Code</a></li>

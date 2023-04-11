@@ -1,8 +1,8 @@
-**Generators**
+Generators
 ==========
 
-**A5/1 GSM Stream cipher generator**
-----------
+A5/1 GSM Stream cipher generator
+-------------------------------
 
 Ref: https://en.wikipedia.org/wiki/A5/1
 
@@ -37,8 +37,8 @@ Image Socuce: https://en.wikipedia.org/wiki/A5/1
   A5.getSeq()
 
 
-**Enhanced A5/1**
-----------
+Enhanced A5/1
+-------------
 
 Reference Article: **Enhancement of A5/1**: https://doi.org/10.1109/ETNCC.2011.5958486
 
@@ -58,8 +58,8 @@ Reference Article: **Enhancement of A5/1**: https://doi.org/10.1109/ETNCC.2011.5
   b3 = R3.state[10]
 
 
-**Geffe Generator**
-----------
+Geffe Generator
+--------------
 
 Ref: Schneier, Bruce. Applied cryptography: protocols, algorithms, and source code in C. john wiley & sons, 2007.
 	Chaper 16 
@@ -72,8 +72,11 @@ Ref: Schneier, Bruce. Applied cryptography: protocols, algorithms, and source co
   import matplotlib.pyplot as plt
   from pylfsr import Geffe, LFSR
 
-  kLFSR = [LFSR(initstate='random') for _ in range(8)]  # List of 8 5-bit LFSRs with default feedback polynomial and random initial state 
-  cLFSR = LFSR(initstate='random')                      # A 5-bit LFSR with for selecting one of 8 output at a time
+  # List of 8 5-bit LFSRs with default feedback polynomial and random initial state 
+  kLFSR = [LFSR(initstate='random') for _ in range(8)]
+
+  # A 5-bit LFSR with for selecting one of 8 output at a time
+  cLFSR = LFSR(initstate='random')                      
 
   GG = Geffe(kLFSR_list=kLFSR, cLFSR=cLFSR)
 

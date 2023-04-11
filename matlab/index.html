@@ -16,7 +16,7 @@
     <script src="../_static/doctools.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="prev" title="API: Supporting Functions" href="../api_ref/api_fun.html" />
+    <link rel="prev" title="API References" href="../api_ref/api.html" />
    
   <link rel="stylesheet" href="../_static/custom.css" type="text/css" />
   
@@ -35,7 +35,8 @@
             
   <section id="matlab-code">
 <h1>MATLAB CODE<a class="headerlink" href="#matlab-code" title="Permalink to this heading">¶</a></h1>
-<p>Folder : <a class="reference external" href="https://github.com/Nikeshbajaj/Linear_Feedback_Shift_Register/tree/master/matlabfiles">https://github.com/Nikeshbajaj/Linear_Feedback_Shift_Register/tree/master/matlabfiles</a></p>
+<p>Download Matlab code from directory
+Path : <a class="reference external" href="https://github.com/Nikeshbajaj/Linear_Feedback_Shift_Register/tree/master/matlabfiles">https://github.com/Nikeshbajaj/Linear_Feedback_Shift_Register/tree/master/matlabfiles</a></p>
 <section id="description">
 <h2>Description<a class="headerlink" href="#description" title="Permalink to this heading">¶</a></h2>
 <p>Generate randon binary sequence using LFSR for any given feedback taps (polynomial),
@@ -50,7 +51,7 @@ This will also check three fundamental properties of LFSR:</p>
 <p>This MATLAB Code work for any length of LFSR with given taps (feedback polynomial) -Universal, There are three files LFSRv1.m an LFSRv2.m, LFSRv3.m</p>
 </section>
 <section id="lfsrv1">
-<h2><strong>LFSRv1</strong><a class="headerlink" href="#lfsrv1" title="Permalink to this heading">¶</a></h2>
+<h2>LFSRv1<a class="headerlink" href="#lfsrv1" title="Permalink to this heading">¶</a></h2>
 <p>This function will return all the states of LFSR and will check Three fundamental Property of LFSR
 (1) Balance Property (2) Runlength Property (3) Autocorrelation Property</p>
 <p>Example:</p>
@@ -61,7 +62,7 @@ This will also check three fundamental properties of LFSR:</p>
 </div>
 </section>
 <section id="lfsrv2">
-<h2><strong>LFSRv2</strong><a class="headerlink" href="#lfsrv2" title="Permalink to this heading">¶</a></h2>
+<h2>LFSRv2<a class="headerlink" href="#lfsrv2" title="Permalink to this heading">¶</a></h2>
 <p>This function will return only generated sequence will all the states of LFSR, no verification of properties are done
 here. Use this function to avoid verification each time you execute the program.</p>
 <p>Example:</p>
@@ -72,7 +73,7 @@ here. Use this function to avoid verification each time you execute the program.
 </div>
 </section>
 <section id="lfsrv3-faster">
-<h2><strong>LFSRv3 (faster)</strong><a class="headerlink" href="#lfsrv3-faster" title="Permalink to this heading">¶</a></h2>
+<h2>LFSRv3 (faster)<a class="headerlink" href="#lfsrv3-faster" title="Permalink to this heading">¶</a></h2>
 <p>&lt;p&gt;seq = LFSRv3(s,t,N)&lt;/p&gt;
 this function generates N bit sequence only. This is faster then other two functions, as this does not gives each state of LFSR</p>
 <p>Exmple:</p>
@@ -128,17 +129,23 @@ this function generates N bit sequence only. This is faster then other two funct
 <li class="toctree-l1"><a class="reference internal" href="../viz/index.html">Visualisation</a></li>
 </ul>
 <ul>
+<li class="toctree-l1"><a class="reference internal" href="../methods/index.html">List of Methods</a></li>
+</ul>
+<ul>
 <li class="toctree-l1"><a class="reference internal" href="../generators/index.html">Generators</a></li>
 </ul>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="../api_ref/index.html">API Doc</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../api_ref/api.html">API References</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../api_ref/api.html#lfsr-class">LFSR Class</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../api_ref/api.html#list-of-methods">List of Methods</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../api_ref/api.html#attributes">Attributes</a></li>
 </ul>
 <ul class="current">
 <li class="toctree-l1 current"><a class="current reference internal" href="#">Matlab Code</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="#description">Description</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#lfsrv1"><strong>LFSRv1</strong></a></li>
-<li class="toctree-l2"><a class="reference internal" href="#lfsrv2"><strong>LFSRv2</strong></a></li>
-<li class="toctree-l2"><a class="reference internal" href="#lfsrv3-faster"><strong>LFSRv3 (faster)</strong></a></li>
+<li class="toctree-l2"><a class="reference internal" href="#lfsrv1">LFSRv1</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#lfsrv2">LFSRv2</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#lfsrv3-faster">LFSRv3 (faster)</a></li>
 </ul>
 </li>
 </ul>

@@ -41,7 +41,7 @@
 <h1>Basic Examples<a class="headerlink" href="#basic-examples" title="Permalink to this heading">¶</a></h1>
 <section id="bit-lfsr-with-feedback-polynomial-x5-x2-1">
 <h2>5-bit LFSR with feedback polynomial: x<sup>5</sup>+ x<sup>2</sup>+1<a class="headerlink" href="#bit-lfsr-with-feedback-polynomial-x5-x2-1" title="Permalink to this heading">¶</a></h2>
-<p>Default feedback polynomial is p(x) = x<sup>5</sup>+ x<sup>2</sup>+ 1</p>
+<p>Default feedback polynomial is p(x) = x<sup>5</sup>+ x<sup>2</sup>+ 1 and default initial state is all ones</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
 <span class="kn">from</span> <span class="nn">pylfsr</span> <span class="kn">import</span> <span class="n">LFSR</span>
 
@@ -49,8 +49,9 @@
 
 <span class="c1"># print the info</span>
 <span class="n">L</span><span class="o">.</span><span class="n">info</span><span class="p">()</span>
-
-<span class="mi">5</span> <span class="n">bit</span> <span class="n">LFSR</span> <span class="k">with</span> <span class="n">feedback</span> <span class="n">polynomial</span>  <span class="n">x</span><span class="o">^</span><span class="mi">5</span> <span class="o">+</span> <span class="n">x</span><span class="o">^</span><span class="mi">2</span> <span class="o">+</span> <span class="mi">1</span>
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="mi">5</span> <span class="n">bit</span> <span class="n">LFSR</span> <span class="k">with</span> <span class="n">feedback</span> <span class="n">polynomial</span>  <span class="n">x</span><span class="o">^</span><span class="mi">5</span> <span class="o">+</span> <span class="n">x</span><span class="o">^</span><span class="mi">2</span> <span class="o">+</span> <span class="mi">1</span>
 <span class="n">Expected</span> <span class="n">Period</span> <span class="p">(</span><span class="k">if</span> <span class="n">polynomial</span> <span class="ow">is</span> <span class="n">primitive</span><span class="p">)</span> <span class="o">=</span>  <span class="mi">31</span>
 <span class="n">Current</span> <span class="p">:</span>
 <span class="n">State</span>        <span class="p">:</span>  <span class="p">[</span><span class="mi">1</span> <span class="mi">1</span> <span class="mi">1</span> <span class="mi">1</span> <span class="mi">1</span><span class="p">]</span>
@@ -180,10 +181,16 @@
 <li class="toctree-l1"><a class="reference internal" href="../viz/index.html">Visualisation</a></li>
 </ul>
 <ul>
+<li class="toctree-l1"><a class="reference internal" href="../methods/index.html">List of Methods</a></li>
+</ul>
+<ul>
 <li class="toctree-l1"><a class="reference internal" href="../generators/index.html">Generators</a></li>
 </ul>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="../api_ref/index.html">API Doc</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../api_ref/api.html">API References</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../api_ref/api.html#lfsr-class">LFSR Class</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../api_ref/api.html#list-of-methods">List of Methods</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../api_ref/api.html#attributes">Attributes</a></li>
 </ul>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../matlab/index.html">Matlab Code</a></li>

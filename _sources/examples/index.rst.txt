@@ -7,7 +7,7 @@ Basic Examples
 5-bit LFSR with feedback polynomial: x\ :sup:`5`\ + x\ :sup:`2`\ +1
 -------------------------------------------------------------------
 
-Default feedback polynomial is p(x) = x\ :sup:`5`\ + x\ :sup:`2`\ + 1
+Default feedback polynomial is p(x) = x\ :sup:`5`\ + x\ :sup:`2`\ + 1 and default initial state is all ones
 
 ::
   
@@ -18,7 +18,9 @@ Default feedback polynomial is p(x) = x\ :sup:`5`\ + x\ :sup:`2`\ + 1
   
   # print the info
   L.info()
-  
+
+::
+
   5 bit LFSR with feedback polynomial  x^5 + x^2 + 1
   Expected Period (if polynomial is primitive) =  31
   Current :
@@ -30,7 +32,6 @@ Default feedback polynomial is p(x) = x\ :sup:`5`\ + x\ :sup:`2`\ + 1
 
 Execute cycles (run LFSR by clock)
 ----------------------------------
-
 
 ::
   

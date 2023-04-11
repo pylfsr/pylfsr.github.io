@@ -1,6 +1,13 @@
+.. role:: raw-html(raw)
+    :format: html
+
 
 Installation
-============
+------------
+
+
+.. Installation
+.. ============
 
 **Requirement** : *numpy*,  *matplotlib*
 
@@ -30,10 +37,14 @@ Download the repository or clone it with git, after cd in directory build it fro
   python setup.py install
 
 
+:raw-html:`<br />`
 
 
 Useful Links
-============
+------------
+
+.. Useful Links
+.. ============
 
 * **Homepage**   - http://PyLFSR.github.io
 * **Documentation** - https://lfsr.readthedocs.io

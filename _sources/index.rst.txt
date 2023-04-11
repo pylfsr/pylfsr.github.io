@@ -81,7 +81,7 @@ A simple example of generating 5-bit LFSR with feedback polynomial of p(x) = x\ 
     k=10
     seq_k  = L.runKCycle(k)
 
-    print('10 cycles--> 10 bits')
+    print('10 bits')
     print(seq_k)
 
     # Generate bits of one full period.
@@ -92,11 +92,19 @@ A simple example of generating 5-bit LFSR with feedback polynomial of p(x) = x\ 
     print('Full period of LFSR = 31-cycles')
     print(seq_full)
 
-10 cycles--> 10 bits
-[0 1 0 0 0 1 1 1 0 1]
 
-Full period of LFSR = 31-cycles
-[0 1 0 0 0 1 1 1 0 1 1 1 1 1 0 0 1 0 0 1 1 0 0 0 0 1 0 1 1 0 1]
+.. code-block:: python
+
+    10 bits
+
+    [0 1 0 0 0 1 1 1 0 1]
+
+    Full period of LFSR = 31-cycles
+
+    [0 1 0 0 0 1 1 1 0 1 1 1 1 1 0 0 1 0 0 1 1 0 0 0 0 1 0 1 1 0 1]
+
+:raw-html:`<br/>`
+:raw-html:`<hr>`
 
 
 **Authors/Contacts:**
@@ -110,9 +118,10 @@ Full period of LFSR = 31-cycles
 .. include:: contacts.rst
 
 
-
+:raw-html:`<br/>`
+:raw-html:`<hr>`
 :raw-html:`<h3><a href="http://PyLFSR.github.io" target="_blank">Github Page</a>  | <a href="https://github.com/Nikeshbajaj/Linear_Feedback_Shift_Register/discussions" target="_blank">Discussion Forum</a> | <a href="https://github.com/Nikeshbajaj/Linear_Feedback_Shift_Register" target="_blank">Github</a></h3>`
-
+:raw-html:`<hr>`
 
 
 .. toctree::
@@ -126,7 +135,7 @@ Full period of LFSR = 31-cycles
    :maxdepth: 3
 
    examples/index
-   
+
 
 .. toctree::
    :hidden:   
@@ -141,6 +150,13 @@ Full period of LFSR = 31-cycles
 
    Visualisation <viz/index>
 
+
+
+.. toctree::
+   :hidden:   
+   :maxdepth: 2
+
+   List of Methods <methods/index>
 
 
 .. toctree::
