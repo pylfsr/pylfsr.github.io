@@ -97,6 +97,17 @@ Dynamic visualisation of LFSR - Animation
 .. image:: https://raw.githubusercontent.com/nikeshbajaj/Linear_Feedback_Shift_Register/master/images/5bit_1.gif
 
 
+Similarly other can be created as 
+
+
+.. image:: https://raw.githubusercontent.com/nikeshbajaj/Linear_Feedback_Shift_Register/master/images/FibanacciLFSR_2.gif
+
+.. image:: https://raw.githubusercontent.com/nikeshbajaj/Linear_Feedback_Shift_Register/master/images/GaloisLFSR_1.gif
+
+
+
+
+
 
 Show each state and each cycle
 ------------------------------
@@ -118,7 +129,7 @@ when setting *counter_start_zero = False*, there will be one extra bit, since fi
 Visualise 3-bit LFSR 
 --------------------
 
-**At each step, with default *counter_start_zero = True* **
+**At each step, with default 'counter_start_zero = True'**
 
 ::
   
@@ -157,7 +168,7 @@ Visualise 3-bit LFSR
   
   
 
-**At each step, with default *counter_start_zero = False* **
+**At each step, with default 'counter_start_zero = False'**
 
 ::
   
