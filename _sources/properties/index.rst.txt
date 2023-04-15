@@ -13,7 +13,116 @@ LFSR Properties: Test 3+1 properties of LFSR
 
 
 
-Test p(x) = x\ :sup:`5`\ + x\ :sup:`2`\ +1 
+Balance Property
+-----------------
+
+In a period of LFSR with a valid feedback polynomial,  the number of 1s should be equal to number of 0s +1
+
+''     N1s == N0s + 1   ''
+
+Test balance property for a given full period of seq, p.
+
+
+::
+
+  import numpy as np
+  from pylfsr import LFSR
+  
+  state = [1,1,1,1,0]
+  fpoly = [5,3]
+  L = LFSR(initstate=state,fpoly=fpoly)
+
+  p = L.getFullPeriod()
+  
+  # Returns (Bool, (number of ones, number of zeros))
+  # bool is True, balance test is passed
+
+  L.balance_property(p.copy())
+
+
+.. code:: text
+
+  (True, (16, 15))
+
+
+Runlength Property
+-----------------
+
+Run Length Property: In a period of LSFR with valid feedback polynomial,
+the number of runs of different length are in specific order.
+    ''
+    number of (M-k) bit runs  =  ⌈ 2^(k-1) ⌉  , for k = 0 to M-1
+    ''
+where ⌈ ⌉ is a ceiling function
+That is, for M bit LFSR,
+    - number of M bit runs     : 1
+    - number of (M-1) bit runs : 1
+    - number of (M-2) bit runs : 2
+    - number of (M-3) bit runs : 4
+    ...
+    so on
+
+
+::
+
+  state = [1,1,1,1,0]
+  fpoly = [5,3]
+  L = LFSR(initstate=state,fpoly=fpoly)
+
+  p = L.getFullPeriod()
+
+  L.runlength_property(p.copy())
+
+.. code:: text
+
+  (True, array([8, 4, 2, 1, 1]))
+
+
+
+Autocorrelation Property
+-----------------
+
+Autocorrelation Property: For sequence of period T of LSFR with valid feedback polynomial,
+the autocorrelation is a noise like, that is, 1 with zero (or T) lag (shift), -1/T (almost zero) else.
+unlike usual, for binary, the correlation value between two sequence of same length bx, by is computed as follow;
+match    = sum(bx == by) (number of mataches)
+mismatch = sum(bx!= by) (number of mismatches)
+
+
+::
+
+  state = [1,1,1,1,0]
+  fpoly = [5,3]
+  L = LFSR(initstate=state,fpoly=fpoly)
+
+  p = L.getFullPeriod()
+
+  L.autocorr_property(p.copy())
+
+.. code:: text
+  (True,
+  (array([-31, -30, -29, -28, -27, -26, -25, -24, -23, -22, -21, -20, -19,
+          -18, -17, -16, -15, -14, -13, -12, -11, -10,  -9,  -8,  -7,  -6,
+            -5,  -4,  -3,  -2,  -1,   0,   1,   2,   3,   4,   5,   6,   7,
+            8,   9,  10,  11,  12,  13,  14,  15,  16,  17,  18,  19,  20,
+            21,  22,  23,  24,  25,  26,  27,  28,  29,  30,  31]),
+    array([ 1.        , -0.03225806, -0.03225806, -0.03225806, -0.03225806,
+          -0.03225806, -0.03225806, -0.03225806, -0.03225806, -0.03225806,
+          -0.03225806, -0.03225806, -0.03225806, -0.03225806, -0.03225806,
+          -0.03225806, -0.03225806, -0.03225806, -0.03225806, -0.03225806,
+          -0.03225806, -0.03225806, -0.03225806, -0.03225806, -0.03225806,
+          -0.03225806, -0.03225806, -0.03225806, -0.03225806, -0.03225806,
+          -0.03225806,  1.        , -0.03225806, -0.03225806, -0.03225806,
+          -0.03225806, -0.03225806, -0.03225806, -0.03225806, -0.03225806,
+          -0.03225806, -0.03225806, -0.03225806, -0.03225806, -0.03225806,
+          -0.03225806, -0.03225806, -0.03225806, -0.03225806, -0.03225806,
+          -0.03225806, -0.03225806, -0.03225806, -0.03225806, -0.03225806,
+          -0.03225806, -0.03225806, -0.03225806, -0.03225806, -0.03225806,
+          -0.03225806, -0.03225806,  1.        ])))
+
+
+
+Test LFSR: p(x) = x\ :sup:`5`\ + x\ :sup:`2`\ +1 
 ------------------------------------------
 
 Let's test LFSR [5,3], for 5-bit LFSR, which we know is a primitive polynomial
@@ -57,7 +166,7 @@ Let's test LFSR [5,3], for 5-bit LFSR, which we know is a primitive polynomial
 .. image:: https://raw.githubusercontent.com/nikeshbajaj/Linear_Feedback_Shift_Register/master/images/acorr_test.jpg
 
 
-Test p(x) = x\ :sup:`5`\ + x\ :sup:`1`\ +1 
+Test LFSR: p(x) = x\ :sup:`5`\ + x\ :sup:`1`\ +1 
 ------------------------------------------
 
 Test LFSR [5,1], for 5-bit LFSR, which we know is ***NOT*** a primitive polynomial
@@ -115,111 +224,3 @@ Individual properties
  L.balance_property(p.copy())
  L.runlength_property(p.copy())
  L.autocorr_property(p.copy())
-
-
-
-
-Feedback (Primitive) Polynomials:
----------------------------------
-
-A primitive polynomial is is irreducible, and not trivial to derive. A list of primitive polynomials upto 32 degree can be found 
-at Ref, which is not an exhaustive list. Since for each primitive polynomial, an image replica (which is also primitive) can be computed easily
-list include half of polynomials for each degree and other half can be compputed by *get_Ifpoly()* method, see example 7.2
-
-
-Ref : http://www.partow.net/programming/polynomials/index.html
-
-
-Get a list of feedback polynomials for a m-bit LFSR
-
-::
-  
-  import pylfsr as PYL
-  PYL.get_fpolyList(m=5)
-  [[5, 2], [5, 4, 2, 1], [5, 4, 3, 2]]
-  
-  # list of all feedback polynomials as a dictionary
-  fpolyDict = PYL.get_fpolyList()
-
-
-Or optional way, if LFSR object is already in place
-
-::
-  
-  from pylfsr import LFSR
-  
-  L = LFSR()
-  # list of 5-bit feedback polynomials
-  fpolys = L.get_fpolyList(m=5)
-  [[5, 2], [5, 4, 2, 1], [5, 4, 3, 2]]
-  
-  # list of all feedback polynomials as a dictionary
-  fpolyDict = L.get_fpolyList()
-
-
-
-Image/Replica of feedback polynomial
------------------------------------
-
-Get a image replica of a feedback polynomial
-
-Image replica of a primitive polynomial is a primitive polynomial, hence a valid feedback polynomial for LFSR
-For m-bit primitive polynomial p(x) = x^m + x^k + .. + 1, a image replica is ip(x) = x^(-m)p(x)
-where 0 < k < m
- 
-::
-  
-  L = LFSR()
-  L.get_Ifpoly([5,3])
-  [5, 2]
-  
-
-::
-  
-  L.get_Ifpoly([5,4,3,2])
-  [5, 3, 2, 1]
-
-::
-  
-  import pylfsr as PYL
-  PYL.get_Ifpoly([5,4,3,2])
-  [5, 3, 2, 1]
-  
-
-Switch polynomial
------------------
-
-Changing feedback polynomial in between
-
-After generating some bits from an LFSR, a feedback polynomial can be changed keeping the current state as intial state and generate
-the new sequece.
-
-::
-  
-  L = LFSR(fpoly=[23,18],initstate ='ones')
-  seq0 = L.runKCycle(10)
-  
-  # Change after 10 clocks
-  #L.changeFpoly(newfpoly =[23,14],reset=False)
-  L.set_fpoly(fpoly =[23,14],reset=False)
-  seq1 = L.runKCycle(20)
-  
-  # Change after 20 clocks
-  L.set_fpoly(fpoly=[23,9],reset=False)
-  seq2 = L.runKCycle(20)
-
-
-Switch Configuration
--------------------
-
-Changing configuration in between
-
-::
-  
-  L = LFSR(fpoly=[23,18],initstate ='ones',conf='fibonacci')
-  seq0 = L.runKCycle(10)
-  
-  # Change after 10 clocks
-  L.set_conf(conf='galois',reset=False)
-  seq1 = L.runKCycle(20)
-  

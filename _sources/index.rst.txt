@@ -1,21 +1,21 @@
-Linear Feedback Shift Register: PyLFSR
-======================================
+Linear Feedback Shift Register: PyLFSR 1.0.7
+===========================================
 
+
+.. role:: raw-html(raw)
+    :format: html
+
+
+.. :raw-html:`<h2>verson=1.0.7</h2>`
 
 .. meta::
    :description: An open source Python-embedded LFSR implementation.
                  Create your own Pseudo-Random Generator using PyLFSR and test its properties.
    :keywords: lfsr, stream-ciphers, random-generator, linear-feedback-shift-register, galois, a51, galois-lfsr fibona fibonacci-lfsr, open source, software,
 
-.. role:: raw-html(raw)
-    :format: html
-
-
 :raw-html:`<br />`
 
 :raw-html:`<h3><a href="http://PyLFSR.github.io" target="_blank">Github Page</a>  | <a href="https://github.com/Nikeshbajaj/Linear_Feedback_Shift_Register/discussions" target="_blank">Discussion Forum</a> | <a href="https://github.com/Nikeshbajaj/Linear_Feedback_Shift_Register" target="_blank">Github</a></h3>`
-
-
 
 .. image:: https://static.pepy.tech/personalized-badge/pylfsr?period=total&units=international_system&left_color=black&right_color=orange&left_text=total-downloads
   :target: https://pepy.tech/project/pylfsr
@@ -64,44 +64,49 @@ It is easy to use and create Pseudo-Random Generator, with custom configurations
 Geffe Genrator and many more. A generated sequence can be tested across different properties.
 
 
-A simple example of generating 5-bit LFSR with feedback polynomial of p(x) = x\ :sup:`5`\ + x\ :sup:`4`\ + x\ :sup:`3`\ + x\ :sup:`2`\ +1 :
+A simple example of generating 5-bit LFSR with feedback polynomial of p(x) = x\ :sup:`5`\ + x\ :sup:`3`\ +1
 
 
 .. code:: python
 
-    import numpy as np
-    from pylfsr import LFSR
+  import numpy as np
+  from pylfsr import LFSR
+
+  state = [0,0,0,1,0]
+  fpoly = [5,3]
+  L = LFSR(fpoly=fpoly,initstate =state)
+
+  # Generate K-bits
+  k=10
+  seq_k  = L.runKCycle(k)
+
+  print('10 bits')
+  print(L.arr2str(seq_k))
+  print('')
 
 
-    state = [0,0,0,1,0]
-    fpoly = [5,4,3,2]
-    L = LFSR(fpoly=fpoly,initstate =state)
+  # Generate bits of one full period.
+  # Expected period of LFSR = 2^M-1, for M-bit LFSR).
+  seq_full  = L.runFullPeriod()
 
-    # Generate K-bits
-    k=10
-    seq_k  = L.runKCycle(k)
+  print('Full period of LFSR = 31-cycles')
+  print(L.arr2str(seq_full))
 
-    print('10 bits')
-    print(seq_k)
-
-    # Generate bits of one full period.
-    # Expected period of LFSR = 2^M-1, for M-bit LFSR).
-    seq_full  = L.runFullPeriod()
-    # The optimal value for x is stored in `x.value`.
-    
-    print('Full period of LFSR = 31-cycles')
-    print(seq_full)
+  L.Viz()
 
 
-.. code-block:: python
+.. code-block::
 
-    10 bits
+  10 bits
+  0100001001
 
-    [0 1 0 0 0 1 1 1 0 1]
+  Full period of LFSR = 31-cycles
+  01000010010110011111000110111010100001001
 
-    Full period of LFSR = 31-cycles
 
-    [0 1 0 0 0 1 1 1 0 1 1 1 1 1 0 0 1 0 0 1 1 0 0 0 0 1 0 1 1 0 1]
+.. image:: https://github.com/Nikeshbajaj/Linear_Feedback_Shift_Register/blob/master/images/L_p53_1.png?raw=true
+  :width: 80%
+
 
 :raw-html:`<br/>`
 :raw-html:`<hr>`
@@ -146,17 +151,23 @@ A simple example of generating 5-bit LFSR with feedback polynomial of p(x) = x\ 
 
 .. toctree::
    :hidden:   
+   :maxdepth: 2
+
+   More on LFSR <methods/more_methods>
+
+.. toctree::
+   :hidden:   
    :maxdepth: 3
 
    Visualisation <viz/index>
-
 
 
 .. toctree::
    :hidden:   
    :maxdepth: 2
 
-   List of Methods <methods/index>
+   List of all Methods <methods/list_table>
+
 
 
 .. toctree::
@@ -168,9 +179,10 @@ A simple example of generating 5-bit LFSR with feedback polynomial of p(x) = x\ 
 
 .. toctree::
    :hidden:   
-   :maxdepth: 2
+   :maxdepth: 1
 
-   API Doc <api_ref/api>
+   api_ref/api
+   api_ref/api_fun
 
 
 .. toctree::
@@ -181,7 +193,4 @@ A simple example of generating 5-bit LFSR with feedback polynomial of p(x) = x\ 
 
 
 
-
-
-
-
+.. <a href='https://clustrmaps.com/site/1bu4a'  title='Visit tracker'><img src='//clustrmaps.com/map_v2.png?cl=080808&w=a&t=n&d=d2iVoHK-KcdA_ymLVqT1XrkhBh1rtJsJMuzLMBs0ZLY&co=ffffff&ct=808080'/></a>

@@ -16,7 +16,7 @@
     <script src="../_static/doctools.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Displaying &amp; Visualisation" href="../viz/index.html" />
+    <link rel="next" title="More on LFSR" href="../methods/more_methods.html" />
     <link rel="prev" title="Examples" href="../examples/index.html" />
    
   <link rel="stylesheet" href="../_static/custom.css" type="text/css" />
@@ -46,8 +46,83 @@ in addition to periodicity (period T = 2^M -1) for M-bit LFSR</p>
 </ol>
 </dd>
 </dl>
-<section id="test-p-x-x5-x2-1">
-<h2>Test p(x) = x<sup>5</sup>+ x<sup>2</sup>+1<a class="headerlink" href="#test-p-x-x5-x2-1" title="Permalink to this heading">¶</a></h2>
+<section id="balance-property">
+<h2>Balance Property<a class="headerlink" href="#balance-property" title="Permalink to this heading">¶</a></h2>
+<p>In a period of LFSR with a valid feedback polynomial,  the number of 1s should be equal to number of 0s +1</p>
+<p>‘’     N1s == N0s + 1   ‘’</p>
+<p>Test balance property for a given full period of seq, p.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">from</span> <span class="nn">pylfsr</span> <span class="kn">import</span> <span class="n">LFSR</span>
+
+<span class="n">state</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">0</span><span class="p">]</span>
+<span class="n">fpoly</span> <span class="o">=</span> <span class="p">[</span><span class="mi">5</span><span class="p">,</span><span class="mi">3</span><span class="p">]</span>
+<span class="n">L</span> <span class="o">=</span> <span class="n">LFSR</span><span class="p">(</span><span class="n">initstate</span><span class="o">=</span><span class="n">state</span><span class="p">,</span><span class="n">fpoly</span><span class="o">=</span><span class="n">fpoly</span><span class="p">)</span>
+
+<span class="n">p</span> <span class="o">=</span> <span class="n">L</span><span class="o">.</span><span class="n">getFullPeriod</span><span class="p">()</span>
+
+<span class="c1"># Returns (Bool, (number of ones, number of zeros))</span>
+<span class="c1"># bool is True, balance test is passed</span>
+
+<span class="n">L</span><span class="o">.</span><span class="n">balance_property</span><span class="p">(</span><span class="n">p</span><span class="o">.</span><span class="n">copy</span><span class="p">())</span>
+</pre></div>
+</div>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>(True, (16, 15))
+</pre></div>
+</div>
+</section>
+<section id="runlength-property">
+<h2>Runlength Property<a class="headerlink" href="#runlength-property" title="Permalink to this heading">¶</a></h2>
+<p>Run Length Property: In a period of LSFR with valid feedback polynomial,
+the number of runs of different length are in specific order.</p>
+<blockquote>
+<div><p>‘’
+number of (M-k) bit runs  =  ⌈ 2^(k-1) ⌉  , for k = 0 to M-1
+‘’</p>
+</div></blockquote>
+<p>where ⌈ ⌉ is a ceiling function
+That is, for M bit LFSR,</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>number of M bit runs     : 1</p></li>
+<li><p>number of (M-1) bit runs : 1</p></li>
+<li><p>number of (M-2) bit runs : 2</p></li>
+<li><p>number of (M-3) bit runs : 4</p></li>
+</ul>
+<p>…
+so on</p>
+</div></blockquote>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">state</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">0</span><span class="p">]</span>
+<span class="n">fpoly</span> <span class="o">=</span> <span class="p">[</span><span class="mi">5</span><span class="p">,</span><span class="mi">3</span><span class="p">]</span>
+<span class="n">L</span> <span class="o">=</span> <span class="n">LFSR</span><span class="p">(</span><span class="n">initstate</span><span class="o">=</span><span class="n">state</span><span class="p">,</span><span class="n">fpoly</span><span class="o">=</span><span class="n">fpoly</span><span class="p">)</span>
+
+<span class="n">p</span> <span class="o">=</span> <span class="n">L</span><span class="o">.</span><span class="n">getFullPeriod</span><span class="p">()</span>
+
+<span class="n">L</span><span class="o">.</span><span class="n">runlength_property</span><span class="p">(</span><span class="n">p</span><span class="o">.</span><span class="n">copy</span><span class="p">())</span>
+</pre></div>
+</div>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>(True, array([8, 4, 2, 1, 1]))
+</pre></div>
+</div>
+</section>
+<section id="autocorrelation-property">
+<h2>Autocorrelation Property<a class="headerlink" href="#autocorrelation-property" title="Permalink to this heading">¶</a></h2>
+<p>Autocorrelation Property: For sequence of period T of LSFR with valid feedback polynomial,
+the autocorrelation is a noise like, that is, 1 with zero (or T) lag (shift), -1/T (almost zero) else.
+unlike usual, for binary, the correlation value between two sequence of same length bx, by is computed as follow;
+match    = sum(bx == by) (number of mataches)
+mismatch = sum(bx!= by) (number of mismatches)</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">state</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">0</span><span class="p">]</span>
+<span class="n">fpoly</span> <span class="o">=</span> <span class="p">[</span><span class="mi">5</span><span class="p">,</span><span class="mi">3</span><span class="p">]</span>
+<span class="n">L</span> <span class="o">=</span> <span class="n">LFSR</span><span class="p">(</span><span class="n">initstate</span><span class="o">=</span><span class="n">state</span><span class="p">,</span><span class="n">fpoly</span><span class="o">=</span><span class="n">fpoly</span><span class="p">)</span>
+
+<span class="n">p</span> <span class="o">=</span> <span class="n">L</span><span class="o">.</span><span class="n">getFullPeriod</span><span class="p">()</span>
+
+<span class="n">L</span><span class="o">.</span><span class="n">autocorr_property</span><span class="p">(</span><span class="n">p</span><span class="o">.</span><span class="n">copy</span><span class="p">())</span>
+</pre></div>
+</div>
+</section>
+<section id="test-lfsr-p-x-x5-x2-1">
+<h2>Test LFSR: p(x) = x<sup>5</sup>+ x<sup>2</sup>+1<a class="headerlink" href="#test-lfsr-p-x-x5-x2-1" title="Permalink to this heading">¶</a></h2>
 <p>Let’s test LFSR [5,3], for 5-bit LFSR, which we know is a primitive polynomial</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">state</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">0</span><span class="p">]</span>
 <span class="n">fpoly</span> <span class="o">=</span> <span class="p">[</span><span class="mi">5</span><span class="p">,</span><span class="mi">3</span><span class="p">]</span>
@@ -84,8 +159,8 @@ Passed all the tests
 </div>
 <img alt="https://raw.githubusercontent.com/nikeshbajaj/Linear_Feedback_Shift_Register/master/images/acorr_test.jpg" src="https://raw.githubusercontent.com/nikeshbajaj/Linear_Feedback_Shift_Register/master/images/acorr_test.jpg" />
 </section>
-<section id="test-p-x-x5-x1-1">
-<h2>Test p(x) = x<sup>5</sup>+ x<sup>1</sup>+1<a class="headerlink" href="#test-p-x-x5-x1-1" title="Permalink to this heading">¶</a></h2>
+<section id="test-lfsr-p-x-x5-x1-1">
+<h2>Test LFSR: p(x) = x<sup>5</sup>+ x<sup>1</sup>+1<a class="headerlink" href="#test-lfsr-p-x-x5-x1-1" title="Permalink to this heading">¶</a></h2>
 <p>Test LFSR [5,1], for 5-bit LFSR, which we know is <strong>*NOT*</strong> a primitive polynomial</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">state</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">0</span><span class="p">]</span>
 <span class="n">fpoly</span> <span class="o">=</span> <span class="p">[</span><span class="mi">5</span><span class="p">,</span><span class="mi">1</span><span class="p">]</span>
@@ -136,86 +211,6 @@ Failed one or more tests, check if feedback polynomial is primitive polynomial
 </pre></div>
 </div>
 </section>
-<section id="feedback-primitive-polynomials">
-<h2>Feedback (Primitive) Polynomials:<a class="headerlink" href="#feedback-primitive-polynomials" title="Permalink to this heading">¶</a></h2>
-<p>A primitive polynomial is is irreducible, and not trivial to derive. A list of primitive polynomials upto 32 degree can be found
-at Ref, which is not an exhaustive list. Since for each primitive polynomial, an image replica (which is also primitive) can be computed easily
-list include half of polynomials for each degree and other half can be compputed by <em>get_Ifpoly()</em> method, see example 7.2</p>
-<p>Ref : <a class="reference external" href="http://www.partow.net/programming/polynomials/index.html">http://www.partow.net/programming/polynomials/index.html</a></p>
-<p>Get a list of feedback polynomials for a m-bit LFSR</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pylfsr</span> <span class="k">as</span> <span class="nn">PYL</span>
-<span class="n">PYL</span><span class="o">.</span><span class="n">get_fpolyList</span><span class="p">(</span><span class="n">m</span><span class="o">=</span><span class="mi">5</span><span class="p">)</span>
-<span class="p">[[</span><span class="mi">5</span><span class="p">,</span> <span class="mi">2</span><span class="p">],</span> <span class="p">[</span><span class="mi">5</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">],</span> <span class="p">[</span><span class="mi">5</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">2</span><span class="p">]]</span>
-
-<span class="c1"># list of all feedback polynomials as a dictionary</span>
-<span class="n">fpolyDict</span> <span class="o">=</span> <span class="n">PYL</span><span class="o">.</span><span class="n">get_fpolyList</span><span class="p">()</span>
-</pre></div>
-</div>
-<p>Or optional way, if LFSR object is already in place</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">pylfsr</span> <span class="kn">import</span> <span class="n">LFSR</span>
-
-<span class="n">L</span> <span class="o">=</span> <span class="n">LFSR</span><span class="p">()</span>
-<span class="c1"># list of 5-bit feedback polynomials</span>
-<span class="n">fpolys</span> <span class="o">=</span> <span class="n">L</span><span class="o">.</span><span class="n">get_fpolyList</span><span class="p">(</span><span class="n">m</span><span class="o">=</span><span class="mi">5</span><span class="p">)</span>
-<span class="p">[[</span><span class="mi">5</span><span class="p">,</span> <span class="mi">2</span><span class="p">],</span> <span class="p">[</span><span class="mi">5</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">],</span> <span class="p">[</span><span class="mi">5</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">2</span><span class="p">]]</span>
-
-<span class="c1"># list of all feedback polynomials as a dictionary</span>
-<span class="n">fpolyDict</span> <span class="o">=</span> <span class="n">L</span><span class="o">.</span><span class="n">get_fpolyList</span><span class="p">()</span>
-</pre></div>
-</div>
-</section>
-<section id="image-replica-of-feedback-polynomial">
-<h2>Image/Replica of feedback polynomial<a class="headerlink" href="#image-replica-of-feedback-polynomial" title="Permalink to this heading">¶</a></h2>
-<p>Get a image replica of a feedback polynomial</p>
-<p>Image replica of a primitive polynomial is a primitive polynomial, hence a valid feedback polynomial for LFSR
-For m-bit primitive polynomial p(x) = x^m + x^k + .. + 1, a image replica is ip(x) = x^(-m)p(x)
-where 0 &lt; k &lt; m</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">L</span> <span class="o">=</span> <span class="n">LFSR</span><span class="p">()</span>
-<span class="n">L</span><span class="o">.</span><span class="n">get_Ifpoly</span><span class="p">([</span><span class="mi">5</span><span class="p">,</span><span class="mi">3</span><span class="p">])</span>
-<span class="p">[</span><span class="mi">5</span><span class="p">,</span> <span class="mi">2</span><span class="p">]</span>
-</pre></div>
-</div>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">L</span><span class="o">.</span><span class="n">get_Ifpoly</span><span class="p">([</span><span class="mi">5</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">2</span><span class="p">])</span>
-<span class="p">[</span><span class="mi">5</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">]</span>
-</pre></div>
-</div>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pylfsr</span> <span class="k">as</span> <span class="nn">PYL</span>
-<span class="n">PYL</span><span class="o">.</span><span class="n">get_Ifpoly</span><span class="p">([</span><span class="mi">5</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">2</span><span class="p">])</span>
-<span class="p">[</span><span class="mi">5</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">]</span>
-</pre></div>
-</div>
-</section>
-<section id="switch-polynomial">
-<h2>Switch polynomial<a class="headerlink" href="#switch-polynomial" title="Permalink to this heading">¶</a></h2>
-<p>Changing feedback polynomial in between</p>
-<p>After generating some bits from an LFSR, a feedback polynomial can be changed keeping the current state as intial state and generate
-the new sequece.</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">L</span> <span class="o">=</span> <span class="n">LFSR</span><span class="p">(</span><span class="n">fpoly</span><span class="o">=</span><span class="p">[</span><span class="mi">23</span><span class="p">,</span><span class="mi">18</span><span class="p">],</span><span class="n">initstate</span> <span class="o">=</span><span class="s1">&#39;ones&#39;</span><span class="p">)</span>
-<span class="n">seq0</span> <span class="o">=</span> <span class="n">L</span><span class="o">.</span><span class="n">runKCycle</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span>
-
-<span class="c1"># Change after 10 clocks</span>
-<span class="c1">#L.changeFpoly(newfpoly =[23,14],reset=False)</span>
-<span class="n">L</span><span class="o">.</span><span class="n">set_fpoly</span><span class="p">(</span><span class="n">fpoly</span> <span class="o">=</span><span class="p">[</span><span class="mi">23</span><span class="p">,</span><span class="mi">14</span><span class="p">],</span><span class="n">reset</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
-<span class="n">seq1</span> <span class="o">=</span> <span class="n">L</span><span class="o">.</span><span class="n">runKCycle</span><span class="p">(</span><span class="mi">20</span><span class="p">)</span>
-
-<span class="c1"># Change after 20 clocks</span>
-<span class="n">L</span><span class="o">.</span><span class="n">set_fpoly</span><span class="p">(</span><span class="n">fpoly</span><span class="o">=</span><span class="p">[</span><span class="mi">23</span><span class="p">,</span><span class="mi">9</span><span class="p">],</span><span class="n">reset</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
-<span class="n">seq2</span> <span class="o">=</span> <span class="n">L</span><span class="o">.</span><span class="n">runKCycle</span><span class="p">(</span><span class="mi">20</span><span class="p">)</span>
-</pre></div>
-</div>
-</section>
-<section id="switch-configuration">
-<h2>Switch Configuration<a class="headerlink" href="#switch-configuration" title="Permalink to this heading">¶</a></h2>
-<p>Changing configuration in between</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">L</span> <span class="o">=</span> <span class="n">LFSR</span><span class="p">(</span><span class="n">fpoly</span><span class="o">=</span><span class="p">[</span><span class="mi">23</span><span class="p">,</span><span class="mi">18</span><span class="p">],</span><span class="n">initstate</span> <span class="o">=</span><span class="s1">&#39;ones&#39;</span><span class="p">,</span><span class="n">conf</span><span class="o">=</span><span class="s1">&#39;fibonacci&#39;</span><span class="p">)</span>
-<span class="n">seq0</span> <span class="o">=</span> <span class="n">L</span><span class="o">.</span><span class="n">runKCycle</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span>
-
-<span class="c1"># Change after 10 clocks</span>
-<span class="n">L</span><span class="o">.</span><span class="n">set_conf</span><span class="p">(</span><span class="n">conf</span><span class="o">=</span><span class="s1">&#39;galois&#39;</span><span class="p">,</span><span class="n">reset</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
-<span class="n">seq1</span> <span class="o">=</span> <span class="n">L</span><span class="o">.</span><span class="n">runKCycle</span><span class="p">(</span><span class="mi">20</span><span class="p">)</span>
-</pre></div>
-</div>
-</section>
 </section>
 
 
@@ -252,24 +247,33 @@ the new sequece.</p>
 </ul>
 <ul class="current">
 <li class="toctree-l1 current"><a class="current reference internal" href="#">LFSR Properties</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="#test-p-x-x5-x2-1">Test p(x) = x<sup>5</sup>+ x<sup>2</sup>+1</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#test-p-x-x5-x1-1">Test p(x) = x<sup>5</sup>+ x<sup>1</sup>+1</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#balance-property">Balance Property</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#runlength-property">Runlength Property</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#autocorrelation-property">Autocorrelation Property</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#test-lfsr-p-x-x5-x2-1">Test LFSR: p(x) = x<sup>5</sup>+ x<sup>2</sup>+1</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#test-lfsr-p-x-x5-x1-1">Test LFSR: p(x) = x<sup>5</sup>+ x<sup>1</sup>+1</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#individual-properties">Individual properties</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#feedback-primitive-polynomials">Feedback (Primitive) Polynomials:</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#image-replica-of-feedback-polynomial">Image/Replica of feedback polynomial</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#switch-polynomial">Switch polynomial</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#switch-configuration">Switch Configuration</a></li>
 </ul>
 </li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../methods/more_methods.html">More on LFSR</a></li>
 </ul>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../viz/index.html">Visualisation</a></li>
 </ul>
 <ul>
+<li class="toctree-l1"><a class="reference internal" href="../methods/list_table.html">List of all Methods</a></li>
+</ul>
+<ul>
 <li class="toctree-l1"><a class="reference internal" href="../generators/index.html">Generators</a></li>
 </ul>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="../api_ref/index.html">API Doc</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../api_ref/api.html">API References</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../api_ref/api.html#lfsr-class">LFSR Class</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../api_ref/api.html#list-of-methods">List of Methods</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../api_ref/api.html#attributes">Attributes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../api_ref/api_fun.html">API Doc</a></li>
 </ul>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../matlab/index.html">Matlab Code</a></li>
