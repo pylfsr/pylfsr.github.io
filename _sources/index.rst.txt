@@ -1,21 +1,23 @@
 PyLFSR: Linear Feedback Shift Register
 ======================================
 
-
 .. role:: raw-html(raw)
     :format: html
 
-
-.. :raw-html:`<h2>verson=1.0.7</h2>`
+:raw-html:`<h3>Verson: 1.0.7</h3>`
 
 .. meta::
    :description: An open source Python-embedded LFSR implementation.
                  Create your own Pseudo-Random Generator using PyLFSR and test its properties.
    :keywords: lfsr, stream-ciphers, random-generator, linear-feedback-shift-register, galois, a51, galois-lfsr fibona fibonacci-lfsr, open source, software,
 
-:raw-html:`<br />`
+.. :raw-html:`<br />`
 
-:raw-html:`<h3><a href="http://PyLFSR.github.io" target="_blank">Github Page</a>  | <a href="https://github.com/Nikeshbajaj/Linear_Feedback_Shift_Register/discussions" target="_blank">Discussion Forum</a> | <a href="https://github.com/Nikeshbajaj/Linear_Feedback_Shift_Register" target="_blank">Github</a></h3>`
+.. :raw-html:`<hr>`
+
+:raw-html:`<h3><a href="http://PyLFSR.github.io" target="_blank">Github Page</a>  | <a href="https://github.com/Nikeshbajaj/Linear_Feedback_Shift_Register/discussions" target="_blank">Discussion Forum</a> | <a href="https://github.com/Nikeshbajaj/Linear_Feedback_Shift_Register" target="_blank">Github</a></h3><hr>`
+
+.. :raw-html:`<hr>`
 
 .. image:: https://static.pepy.tech/personalized-badge/pylfsr?period=total&units=international_system&left_color=black&right_color=orange&left_text=total-downloads
   :target: https://pepy.tech/project/pylfsr
