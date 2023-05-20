@@ -1,5 +1,5 @@
-Linear Feedback Shift Register: PyLFSR 1.0.7
-===========================================
+PyLFSR: Linear Feedback Shift Register
+======================================
 
 
 .. role:: raw-html(raw)
