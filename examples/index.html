@@ -1,19 +1,18 @@
-
 <!DOCTYPE html>
 
-<html lang="en">
+<html lang="en" data-content_root="../">
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
     <title>Examples &#8212; PyLFSR 1.0 documentation</title>
-    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/pylfsr_alabaster.css" />
-    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
-    <script src="../_static/jquery.js"></script>
-    <script src="../_static/underscore.js"></script>
-    <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
-    <script src="../_static/doctools.js"></script>
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="../_static/pylfsr_alabaster.css?v=6c13f287" />
+    <script src="../_static/jquery.js?v=5d32c60e"></script>
+    <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+    <script src="../_static/documentation_options.js?v=46dfa7f5"></script>
+    <script src="../_static/doctools.js?v=888ff710"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="LFSR Properties" href="../properties/index.html" />
@@ -35,7 +34,7 @@
           <div class="body" role="main">
             
   <section id="examples">
-<h1>Examples<a class="headerlink" href="#examples" title="Permalink to this heading">¶</a></h1>
+<h1>Examples<a class="headerlink" href="#examples" title="Link to this heading">¶</a></h1>
 <p><strong>Construction of LFSR</strong></p>
 <p>To create an LFSR, all you need is feedback polynomial p(x) and initial state of LFSR.
 Feedback polynomial is passed as <code class="docutils literal notranslate"><span class="pre">`fpoly`</span></code> and initial state is passed as <code class="docutils literal notranslate"><span class="pre">`initstate`</span></code></p>
@@ -47,9 +46,9 @@ Initial state can be passed as string {‘ones’ or ‘random’} or list of bi
 <code class="docutils literal notranslate"><span class="pre">`seq_bit_index`</span></code></p>
 </section>
 <section id="basic-examples">
-<h1>Basic Examples<a class="headerlink" href="#basic-examples" title="Permalink to this heading">¶</a></h1>
+<h1>Basic Examples<a class="headerlink" href="#basic-examples" title="Link to this heading">¶</a></h1>
 <section id="bit-lfsr-with-p-x-x5-x2-1">
-<h2>5-bit LFSR with p(x) = x<sup>5</sup>+ x<sup>2</sup>+1<a class="headerlink" href="#bit-lfsr-with-p-x-x5-x2-1" title="Permalink to this heading">¶</a></h2>
+<h2>5-bit LFSR with p(x) = x<sup>5</sup>+ x<sup>2</sup>+1<a class="headerlink" href="#bit-lfsr-with-p-x-x5-x2-1" title="Link to this heading">¶</a></h2>
 <p>Default feedback polynomial is p(x) = x<sup>5</sup>+ x<sup>2</sup>+ 1 and default initial state is all ones</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
 <span class="kn">from</span> <span class="nn">pylfsr</span> <span class="kn">import</span> <span class="n">LFSR</span>
@@ -71,7 +70,7 @@ feedback bit : -1
 </div>
 </section>
 <section id="execute-cycle-s">
-<h2>Execute cycle(s)<a class="headerlink" href="#execute-cycle-s" title="Permalink to this heading">¶</a></h2>
+<h2>Execute cycle(s)<a class="headerlink" href="#execute-cycle-s" title="Link to this heading">¶</a></h2>
 <p>Run LFSR by clock</p>
 <p>To execute one cycle or multiple cycles <code class="docutils literal notranslate"><span class="pre">`next()`</span></code> or <code class="docutils literal notranslate"><span class="pre">`runKCycle(k)`</span></code> is used
 One full period can also be execute by using <code class="docutils literal notranslate"><span class="pre">`runFullPeriod()`</span></code></p>
@@ -91,7 +90,7 @@ One full period can also be execute by using <code class="docutils literal notra
 </div>
 </section>
 <section id="bit-lfsr-with-p-x-and-initial-state">
-<h2>5-bit LFSR with p(x) and initial state<a class="headerlink" href="#bit-lfsr-with-p-x-and-initial-state" title="Permalink to this heading">¶</a></h2>
+<h2>5-bit LFSR with p(x) and initial state<a class="headerlink" href="#bit-lfsr-with-p-x-and-initial-state" title="Link to this heading">¶</a></h2>
 <p>To create 5-bit LFSR of feedback polynomial p(x) = x<sup>5</sup>+ x<sup>4</sup>+ x<sup>3</sup>+ x<sup>2</sup>+1,
 and choosen initial state, here is a simple example</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">state</span> <span class="o">=</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">0</span><span class="p">]</span>
@@ -115,7 +114,7 @@ feedback bit :  -1
 <a class="reference external image-reference" href="#"><img alt="https://github.com/Nikeshbajaj/Linear_Feedback_Shift_Register/blob/master/images/L_p5432_1.png?raw=true" src="https://github.com/Nikeshbajaj/Linear_Feedback_Shift_Register/blob/master/images/L_p5432_1.png?raw=true" style="width: 80%;" /></a>
 </section>
 <section id="fibonacci-lfsr">
-<h2>Fibonacci LFSR<a class="headerlink" href="#fibonacci-lfsr" title="Permalink to this heading">¶</a></h2>
+<h2>Fibonacci LFSR<a class="headerlink" href="#fibonacci-lfsr" title="Link to this heading">¶</a></h2>
 <p>By deault, LFSR is in Fibonacci configuration mode, but it can be implicitly set to Fibonacci configuration by using <code class="docutils literal notranslate"><span class="pre">`conf`</span></code></p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">fpoly</span> <span class="o">=</span> <span class="p">[</span><span class="mi">14</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">1</span><span class="p">]</span>
 <span class="n">L</span> <span class="o">=</span> <span class="n">LFSR</span><span class="p">(</span><span class="n">fpoly</span><span class="o">=</span><span class="n">fpoly</span><span class="p">,</span><span class="n">initstate</span><span class="o">=</span><span class="s1">&#39;random&#39;</span><span class="p">,</span> <span class="n">conf</span><span class="o">=</span><span class="s1">&#39;fibonacci&#39;</span><span class="p">)</span>
@@ -125,7 +124,7 @@ feedback bit :  -1
 <a class="reference external image-reference" href="#fibonacci-lfsr"><img alt="https://github.com/Nikeshbajaj/Linear_Feedback_Shift_Register/blob/master/images/L_p14_861_fibonacci.png?raw=true" src="https://github.com/Nikeshbajaj/Linear_Feedback_Shift_Register/blob/master/images/L_p14_861_fibonacci.png?raw=true" style="width: 80%;" /></a>
 </section>
 <section id="galois-lfsr">
-<h2>Galois LFSR<a class="headerlink" href="#galois-lfsr" title="Permalink to this heading">¶</a></h2>
+<h2>Galois LFSR<a class="headerlink" href="#galois-lfsr" title="Link to this heading">¶</a></h2>
 <p>To construct LSFR with Galois configuration , pass <code class="docutils literal notranslate"><span class="pre">`conf</span> <span class="pre">=</span> <span class="pre">'galois'`</span></code></p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">L</span> <span class="o">=</span> <span class="n">LFSR</span><span class="p">(</span><span class="n">fpoly</span> <span class="o">=</span> <span class="p">[</span><span class="mi">5</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">2</span><span class="p">],</span> <span class="n">conf</span><span class="o">=</span><span class="s1">&#39;galois&#39;</span><span class="p">)</span>
 <span class="n">L</span><span class="o">.</span><span class="n">Viz</span><span class="p">(</span><span class="n">show_outseq</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
@@ -134,7 +133,7 @@ feedback bit :  -1
 <a class="reference external image-reference" href="#galois-lfsr"><img alt="https://github.com/Nikeshbajaj/Linear_Feedback_Shift_Register/blob/master/images/L_p14_861_galois.png?raw=true" src="https://github.com/Nikeshbajaj/Linear_Feedback_Shift_Register/blob/master/images/L_p14_861_galois.png?raw=true" style="width: 80%;" /></a>
 </section>
 <section id="bit-lfsr-x23-x18-1">
-<h2>23-bit LFSR: x<sup>23</sup>+ x<sup>18</sup>+1<a class="headerlink" href="#bit-lfsr-x23-x18-1" title="Permalink to this heading">¶</a></h2>
+<h2>23-bit LFSR: x<sup>23</sup>+ x<sup>18</sup>+1<a class="headerlink" href="#bit-lfsr-x23-x18-1" title="Link to this heading">¶</a></h2>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">L</span> <span class="o">=</span> <span class="n">LFSR</span><span class="p">(</span><span class="n">fpoly</span><span class="o">=</span><span class="p">[</span><span class="mi">23</span><span class="p">,</span><span class="mi">18</span><span class="p">],</span><span class="n">initstate</span> <span class="o">=</span><span class="s1">&#39;random&#39;</span><span class="p">,</span><span class="n">verbose</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
 <span class="n">L</span><span class="o">.</span><span class="n">info</span><span class="p">()</span>
 <span class="n">L</span><span class="o">.</span><span class="n">runKCycle</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span>
@@ -163,7 +162,7 @@ S:  [1 1 0 0 1 1 0 1 0 0 1 0 1 0 1 0 0 0 1 0 1 0 0]
 </div>
 </section>
 <section id="bit-lfsr-x23-x5-1">
-<h2>23-bit LFSR: x<sup>23</sup>+ x<sup>5</sup>+1<a class="headerlink" href="#bit-lfsr-x23-x5-1" title="Permalink to this heading">¶</a></h2>
+<h2>23-bit LFSR: x<sup>23</sup>+ x<sup>5</sup>+1<a class="headerlink" href="#bit-lfsr-x23-x5-1" title="Link to this heading">¶</a></h2>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">L</span> <span class="o">=</span> <span class="n">LFSR</span><span class="p">(</span><span class="n">fpoly</span><span class="o">=</span><span class="p">[</span><span class="mi">23</span><span class="p">,</span><span class="mi">5</span><span class="p">],</span><span class="n">initstate</span> <span class="o">=</span><span class="s1">&#39;ones&#39;</span><span class="p">)</span>
 <span class="n">L</span><span class="o">.</span><span class="n">info</span><span class="p">()</span>
 <span class="c1">#L.runFullPeriod()</span>
@@ -184,7 +183,7 @@ S:  [1 1 0 0 1 1 0 1 0 0 1 0 1 0 1 0 0 0 1 0 1 0 0]
 </div>
 </section>
 <section id="output-as-binary-image">
-<h2>Output as Binary Image<a class="headerlink" href="#output-as-binary-image" title="Permalink to this heading">¶</a></h2>
+<h2>Output as Binary Image<a class="headerlink" href="#output-as-binary-image" title="Link to this heading">¶</a></h2>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
 <span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
 <span class="kn">from</span> <span class="nn">pylfsr</span> <span class="kn">import</span> <span class="n">LFSR</span>
@@ -296,7 +295,64 @@ S:  [1 1 0 0 1 1 0 1 0 0 1 0 1 0 1 0 0 0 1 0 1 0 0]
 <li class="toctree-l1"><a class="reference internal" href="../matlab/index.html">Matlab Code</a></li>
 </ul>
 
+<!-- <a href="https://github.com/Nikeshbajaj/Linear_Feedback_Shift_Register/fork" class="github">
+    <img style="position: absolute; top: 0; right: 0; border: 0;" src="https://github.blog/wp-content/uploads/2008/12/forkme_right_red_aa0000.png?resize=149%2C149" alt="Fork me on GitHub"  class="github"/>
+</a> -->
 
+<a href="https://github.com/Nikeshbajaj/Linear_Feedback_Shift_Register/fork" class="github">
+    <img style="position: absolute; top: 0; right: 0; border: 0;" src="https://raw.githubusercontent.com/Nikeshbajaj/Linear_Feedback_Shift_Register/master/images/forkme_left_github_right_red.png?resize=149%2C149" alt="Fork me on GitHub"  class="github"/>
+</a>
+
+<!-- <div style="font-size: 20px;">
+    <hr>
+    <a href="https://github.com/Nikeshbajaj/Linear_Feedback_Shift_Register/discussions?discussions_q=" target="_blank">Discussion Forum</a>
+    <br>
+    <a href="https://github.com/Nikeshbajaj/Linear_Feedback_Shift_Register/issues" target="_blank">Report Issues</a>
+    <br>
+    <a href="https://github.com/Nikeshbajaj/Linear_Feedback_Shift_Register/discussions?discussions_q=" target="_blank">Suggestions</a>
+    <hr>
+</div> -->
+
+<!-- text-align:center; -->
+<!-- <hr style="width:100px; margin: auto;"> -->
+
+
+<div style="font-size: 20px; 
+padding: 5px; 
+border: 1px dashed rgb(181, 177, 177,0.5);
+border-radius: 0px; 
+margin: 4px;">
+    <!-- <hr> -->
+    <!-- <br> -->
+    <a href="https://github.com/Nikeshbajaj/Linear_Feedback_Shift_Register/discussions?discussions_q=" target="_blank">Discussion Forum</a>
+    <br>
+    <a href="https://github.com/Nikeshbajaj/Linear_Feedback_Shift_Register/issues" target="_blank">Report Issues</a>
+    <br>
+    <a href="https://github.com/Nikeshbajaj/Linear_Feedback_Shift_Register/discussions?discussions_q=" target="_blank">Suggestions</a>
+    <!-- <br>
+    <br> -->
+    <!-- <hr style="width:100px; margin: auto;"> -->
+</div>
+
+
+
+<!-- <div style="background: rgba(255, 255, 255, 0); 
+font-size: 20px; 
+padding: 5px; 
+border: 1px solid rgb(112, 112, 112);
+border-radius: 20px; 
+margin: 1px;">
+    <h5>
+    <a href="https://github.com/Nikeshbajaj/Linear_Feedback_Shift_Register/discussions?discussions_q=" target="_blank">Discussion Forum</a>
+    </h5>
+    <h5>
+        <a href="https://github.com/Nikeshbajaj/Linear_Feedback_Shift_Register/issues" target="_blank">Report Issues</a>
+    </h5>
+    <h5>
+        <a href="https://github.com/Nikeshbajaj/Linear_Feedback_Shift_Register/discussions?discussions_q=" target="_blank">Suggestions</a>
+    </h5>
+    
+</div> -->
 <div id="searchbox" style="display: none" role="search">
   <h3 id="searchlabel">Quick search</h3>
     <div class="searchformwrapper">
@@ -339,7 +395,6 @@ S:  [1 1 0 0 1 1 0 1 0 0 1 0 1 0 1 0 0 0 1 0 1 0 0]
     <script type="text/javascript" id="clstr_globe" src="//clustrmaps.com/globe.js?d=d2iVoHK-KcdA_ymLVqT1XrkhBh1rtJsJMuzLMBs0ZLY"></script>
     <!-- <a href="https://clustrmaps.com/site/1bu4a"  title="Visit tracker"><img src="//www.clustrmaps.com/map_v2.png?d=d2iVoHK-KcdA_ymLVqT1XrkhBh1rtJsJMuzLMBs0ZLY&cl=ffffff" /></a> -->
     <!-- <a href="https://clustrmaps.com/site/1bu4a"  title="Visit tracker"><img src="//www.clustrmaps.com/map_v2.png?d=d2iVoHK-KcdA_ymLVqT1XrkhBh1rtJsJMuzLMBs0ZLY&cl=ffffff" /></a> -->
-    From 20-05-2023
 </div>
         </div>
       </div>
@@ -349,18 +404,14 @@ S:  [1 1 0 0 1 1 0 1 0 0 1 0 1 0 1 0 0 0 1 0 1 0 0]
       &copy;2018, Nikesh Bajaj.
       
       |
-      Powered by <a href="http://sphinx-doc.org/">Sphinx 5.0.2</a>
-      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.12</a>
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 7.2.6</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.13</a>
       
       |
       <a href="../_sources/examples/index.rst.txt"
           rel="nofollow">Page source</a>
     </div>
 
-    
-    <a href="https://github.com/Nikeshbajaj/Linear_Feedback_Shift_Register" class="github">
-        <img style="position: absolute; top: 0; right: 0; border: 0;" src="https://s3.amazonaws.com/github/ribbons/forkme_right_darkblue_121621.png" alt="Fork me on GitHub"  class="github"/>
-    </a>
     
 
     

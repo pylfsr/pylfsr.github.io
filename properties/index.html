@@ -1,19 +1,18 @@
-
 <!DOCTYPE html>
 
-<html lang="en">
+<html lang="en" data-content_root="../">
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
     <title>LFSR Properties &#8212; PyLFSR 1.0 documentation</title>
-    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/pylfsr_alabaster.css" />
-    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
-    <script src="../_static/jquery.js"></script>
-    <script src="../_static/underscore.js"></script>
-    <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
-    <script src="../_static/doctools.js"></script>
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="../_static/pylfsr_alabaster.css?v=6c13f287" />
+    <script src="../_static/jquery.js?v=5d32c60e"></script>
+    <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+    <script src="../_static/documentation_options.js?v=46dfa7f5"></script>
+    <script src="../_static/doctools.js?v=888ff710"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="More on LFSR" href="../methods/more_methods.html" />
@@ -35,7 +34,7 @@
           <div class="body" role="main">
             
   <section id="lfsr-properties">
-<h1>LFSR Properties<a class="headerlink" href="#lfsr-properties" title="Permalink to this heading">¶</a></h1>
+<h1>LFSR Properties<a class="headerlink" href="#lfsr-properties" title="Link to this heading">¶</a></h1>
 <dl class="simple">
 <dt>LFSR Properties: Test 3+1 properties of LFSR</dt><dd><p>Using <em>test_properties(verbose=1)</em> method, it we can test if LSFR set be state and polynomial setisfies the following properites
 in addition to periodicity (period T = 2^M -1) for M-bit LFSR</p>
@@ -47,7 +46,7 @@ in addition to periodicity (period T = 2^M -1) for M-bit LFSR</p>
 </dd>
 </dl>
 <section id="balance-property">
-<h2>Balance Property<a class="headerlink" href="#balance-property" title="Permalink to this heading">¶</a></h2>
+<h2>Balance Property<a class="headerlink" href="#balance-property" title="Link to this heading">¶</a></h2>
 <p>In a period of LFSR with a valid feedback polynomial,  the number of 1s should be equal to number of 0s +1</p>
 <p>‘’     N1s == N0s + 1   ‘’</p>
 <p>Test balance property for a given full period of seq, p.</p>
@@ -71,7 +70,7 @@ in addition to periodicity (period T = 2^M -1) for M-bit LFSR</p>
 </div>
 </section>
 <section id="runlength-property">
-<h2>Runlength Property<a class="headerlink" href="#runlength-property" title="Permalink to this heading">¶</a></h2>
+<h2>Runlength Property<a class="headerlink" href="#runlength-property" title="Link to this heading">¶</a></h2>
 <p>Run Length Property: In a period of LSFR with valid feedback polynomial,
 the number of runs of different length are in specific order.</p>
 <blockquote>
@@ -105,7 +104,7 @@ so on</p>
 </div>
 </section>
 <section id="autocorrelation-property">
-<h2>Autocorrelation Property<a class="headerlink" href="#autocorrelation-property" title="Permalink to this heading">¶</a></h2>
+<h2>Autocorrelation Property<a class="headerlink" href="#autocorrelation-property" title="Link to this heading">¶</a></h2>
 <p>Autocorrelation Property: For sequence of period T of LSFR with valid feedback polynomial,
 the autocorrelation is a noise like, that is, 1 with zero (or T) lag (shift), -1/T (almost zero) else.
 unlike usual, for binary, the correlation value between two sequence of same length bx, by is computed as follow;
@@ -122,7 +121,7 @@ mismatch = sum(bx!= by) (number of mismatches)</p>
 </div>
 </section>
 <section id="test-lfsr-p-x-x5-x2-1">
-<h2>Test LFSR: p(x) = x<sup>5</sup>+ x<sup>2</sup>+1<a class="headerlink" href="#test-lfsr-p-x-x5-x2-1" title="Permalink to this heading">¶</a></h2>
+<h2>Test LFSR: p(x) = x<sup>5</sup>+ x<sup>2</sup>+1<a class="headerlink" href="#test-lfsr-p-x-x5-x2-1" title="Link to this heading">¶</a></h2>
 <p>Let’s test LFSR [5,3], for 5-bit LFSR, which we know is a primitive polynomial</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">state</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">0</span><span class="p">]</span>
 <span class="n">fpoly</span> <span class="o">=</span> <span class="p">[</span><span class="mi">5</span><span class="p">,</span><span class="mi">3</span><span class="p">]</span>
@@ -160,7 +159,7 @@ Passed all the tests
 <img alt="https://raw.githubusercontent.com/nikeshbajaj/Linear_Feedback_Shift_Register/master/images/acorr_test.jpg" src="https://raw.githubusercontent.com/nikeshbajaj/Linear_Feedback_Shift_Register/master/images/acorr_test.jpg" />
 </section>
 <section id="test-lfsr-p-x-x5-x1-1">
-<h2>Test LFSR: p(x) = x<sup>5</sup>+ x<sup>1</sup>+1<a class="headerlink" href="#test-lfsr-p-x-x5-x1-1" title="Permalink to this heading">¶</a></h2>
+<h2>Test LFSR: p(x) = x<sup>5</sup>+ x<sup>1</sup>+1<a class="headerlink" href="#test-lfsr-p-x-x5-x1-1" title="Link to this heading">¶</a></h2>
 <p>Test LFSR [5,1], for 5-bit LFSR, which we know is <strong>*NOT*</strong> a primitive polynomial</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">state</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">0</span><span class="p">]</span>
 <span class="n">fpoly</span> <span class="o">=</span> <span class="p">[</span><span class="mi">5</span><span class="p">,</span><span class="mi">1</span><span class="p">]</span>
@@ -197,7 +196,7 @@ Failed one or more tests, check if feedback polynomial is primitive polynomial
 <img alt="https://raw.githubusercontent.com/nikeshbajaj/Linear_Feedback_Shift_Register/master/images/acorr_test_npf.jpg" src="https://raw.githubusercontent.com/nikeshbajaj/Linear_Feedback_Shift_Register/master/images/acorr_test_npf.jpg" />
 </section>
 <section id="individual-properties">
-<h2>Individual properties<a class="headerlink" href="#individual-properties" title="Permalink to this heading">¶</a></h2>
+<h2>Individual properties<a class="headerlink" href="#individual-properties" title="Link to this heading">¶</a></h2>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">state</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">]</span>
 <span class="n">fpoly</span> <span class="o">=</span> <span class="p">[</span><span class="mi">5</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">2</span><span class="p">]</span>
 <span class="n">L</span> <span class="o">=</span> <span class="n">LFSR</span><span class="p">(</span><span class="n">initstate</span><span class="o">=</span><span class="n">state</span><span class="p">,</span><span class="n">fpoly</span><span class="o">=</span><span class="n">fpoly</span><span class="p">)</span>
@@ -279,7 +278,64 @@ Failed one or more tests, check if feedback polynomial is primitive polynomial
 <li class="toctree-l1"><a class="reference internal" href="../matlab/index.html">Matlab Code</a></li>
 </ul>
 
+<!-- <a href="https://github.com/Nikeshbajaj/Linear_Feedback_Shift_Register/fork" class="github">
+    <img style="position: absolute; top: 0; right: 0; border: 0;" src="https://github.blog/wp-content/uploads/2008/12/forkme_right_red_aa0000.png?resize=149%2C149" alt="Fork me on GitHub"  class="github"/>
+</a> -->
 
+<a href="https://github.com/Nikeshbajaj/Linear_Feedback_Shift_Register/fork" class="github">
+    <img style="position: absolute; top: 0; right: 0; border: 0;" src="https://raw.githubusercontent.com/Nikeshbajaj/Linear_Feedback_Shift_Register/master/images/forkme_left_github_right_red.png?resize=149%2C149" alt="Fork me on GitHub"  class="github"/>
+</a>
+
+<!-- <div style="font-size: 20px;">
+    <hr>
+    <a href="https://github.com/Nikeshbajaj/Linear_Feedback_Shift_Register/discussions?discussions_q=" target="_blank">Discussion Forum</a>
+    <br>
+    <a href="https://github.com/Nikeshbajaj/Linear_Feedback_Shift_Register/issues" target="_blank">Report Issues</a>
+    <br>
+    <a href="https://github.com/Nikeshbajaj/Linear_Feedback_Shift_Register/discussions?discussions_q=" target="_blank">Suggestions</a>
+    <hr>
+</div> -->
+
+<!-- text-align:center; -->
+<!-- <hr style="width:100px; margin: auto;"> -->
+
+
+<div style="font-size: 20px; 
+padding: 5px; 
+border: 1px dashed rgb(181, 177, 177,0.5);
+border-radius: 0px; 
+margin: 4px;">
+    <!-- <hr> -->
+    <!-- <br> -->
+    <a href="https://github.com/Nikeshbajaj/Linear_Feedback_Shift_Register/discussions?discussions_q=" target="_blank">Discussion Forum</a>
+    <br>
+    <a href="https://github.com/Nikeshbajaj/Linear_Feedback_Shift_Register/issues" target="_blank">Report Issues</a>
+    <br>
+    <a href="https://github.com/Nikeshbajaj/Linear_Feedback_Shift_Register/discussions?discussions_q=" target="_blank">Suggestions</a>
+    <!-- <br>
+    <br> -->
+    <!-- <hr style="width:100px; margin: auto;"> -->
+</div>
+
+
+
+<!-- <div style="background: rgba(255, 255, 255, 0); 
+font-size: 20px; 
+padding: 5px; 
+border: 1px solid rgb(112, 112, 112);
+border-radius: 20px; 
+margin: 1px;">
+    <h5>
+    <a href="https://github.com/Nikeshbajaj/Linear_Feedback_Shift_Register/discussions?discussions_q=" target="_blank">Discussion Forum</a>
+    </h5>
+    <h5>
+        <a href="https://github.com/Nikeshbajaj/Linear_Feedback_Shift_Register/issues" target="_blank">Report Issues</a>
+    </h5>
+    <h5>
+        <a href="https://github.com/Nikeshbajaj/Linear_Feedback_Shift_Register/discussions?discussions_q=" target="_blank">Suggestions</a>
+    </h5>
+    
+</div> -->
 <div id="searchbox" style="display: none" role="search">
   <h3 id="searchlabel">Quick search</h3>
     <div class="searchformwrapper">
@@ -322,7 +378,6 @@ Failed one or more tests, check if feedback polynomial is primitive polynomial
     <script type="text/javascript" id="clstr_globe" src="//clustrmaps.com/globe.js?d=d2iVoHK-KcdA_ymLVqT1XrkhBh1rtJsJMuzLMBs0ZLY"></script>
     <!-- <a href="https://clustrmaps.com/site/1bu4a"  title="Visit tracker"><img src="//www.clustrmaps.com/map_v2.png?d=d2iVoHK-KcdA_ymLVqT1XrkhBh1rtJsJMuzLMBs0ZLY&cl=ffffff" /></a> -->
     <!-- <a href="https://clustrmaps.com/site/1bu4a"  title="Visit tracker"><img src="//www.clustrmaps.com/map_v2.png?d=d2iVoHK-KcdA_ymLVqT1XrkhBh1rtJsJMuzLMBs0ZLY&cl=ffffff" /></a> -->
-    From 20-05-2023
 </div>
         </div>
       </div>
@@ -332,18 +387,14 @@ Failed one or more tests, check if feedback polynomial is primitive polynomial
       &copy;2018, Nikesh Bajaj.
       
       |
-      Powered by <a href="http://sphinx-doc.org/">Sphinx 5.0.2</a>
-      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.12</a>
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 7.2.6</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.13</a>
       
       |
       <a href="../_sources/properties/index.rst.txt"
           rel="nofollow">Page source</a>
     </div>
 
-    
-    <a href="https://github.com/Nikeshbajaj/Linear_Feedback_Shift_Register" class="github">
-        <img style="position: absolute; top: 0; right: 0; border: 0;" src="https://s3.amazonaws.com/github/ribbons/forkme_right_darkblue_121621.png" alt="Fork me on GitHub"  class="github"/>
-    </a>
     
 
     

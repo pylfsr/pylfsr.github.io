@@ -1,19 +1,18 @@
-
 <!DOCTYPE html>
 
-<html lang="en">
+<html lang="en" data-content_root="../">
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
     <title>API References &#8212; PyLFSR 1.0 documentation</title>
-    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/pylfsr_alabaster.css" />
-    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
-    <script src="../_static/jquery.js"></script>
-    <script src="../_static/underscore.js"></script>
-    <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
-    <script src="../_static/doctools.js"></script>
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="../_static/pylfsr_alabaster.css?v=6c13f287" />
+    <script src="../_static/jquery.js?v=5d32c60e"></script>
+    <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+    <script src="../_static/documentation_options.js?v=46dfa7f5"></script>
+    <script src="../_static/doctools.js?v=888ff710"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="API: Supporting Functions" href="api_fun.html" />
@@ -35,10 +34,10 @@
           <div class="body" role="main">
             
   <section id="api-references">
-<h1>API References<a class="headerlink" href="#api-references" title="Permalink to this heading">¶</a></h1>
+<h1>API References<a class="headerlink" href="#api-references" title="Link to this heading">¶</a></h1>
 </section>
 <section id="lfsr-class">
-<h1>LFSR Class<a class="headerlink" href="#lfsr-class" title="Permalink to this heading">¶</a></h1>
+<h1>LFSR Class<a class="headerlink" href="#lfsr-class" title="Link to this heading">¶</a></h1>
 <p>Linear Feedback Shift Register</p>
 <p>Python implementation of LFSR</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">pylfsr</span><span class="o">.</span><span class="n">LFSR</span><span class="p">(</span><span class="n">fpoly</span><span class="o">=</span><span class="p">[</span><span class="mi">5</span><span class="p">,</span> <span class="mi">2</span><span class="p">],</span> <span class="n">initstate</span><span class="o">=</span><span class="s1">&#39;ones&#39;</span><span class="p">,</span>
@@ -47,7 +46,7 @@
 </pre></div>
 </div>
 <section id="parameters">
-<h2>Parameters:<a class="headerlink" href="#parameters" title="Permalink to this heading">¶</a></h2>
+<h2>Parameters:<a class="headerlink" href="#parameters" title="Link to this heading">¶</a></h2>
 <dl>
 <dt>fpoly<span class="classifier">list, optional (default=[5,2]):</span></dt><dd><p>Feedback polynomial, it has to be primitive polynomial of GF(2) field, for valid output of LFSR.</p>
 <p>Example: for 5-bit LFSR, fpoly=[5,2], [5,3], [5,4,3,2], etc
@@ -97,17 +96,17 @@ Galois: <a class="reference external" href="https://en.wikipedia.org/wiki/Linear
 </section>
 </section>
 <section id="list-of-methods">
-<h1>List of Methods<a class="headerlink" href="#list-of-methods" title="Permalink to this heading">¶</a></h1>
+<h1>List of Methods<a class="headerlink" href="#list-of-methods" title="Link to this heading">¶</a></h1>
 <section id="methods">
-<h2>Methods<a class="headerlink" href="#methods" title="Permalink to this heading">¶</a></h2>
+<h2>Methods<a class="headerlink" href="#methods" title="Link to this heading">¶</a></h2>
 </section>
 <section id="clocking-running-lfsr">
-<h2>Clocking (running LFSR):<a class="headerlink" href="#clocking-running-lfsr" title="Permalink to this heading">¶</a></h2>
+<h2>Clocking (running LFSR):<a class="headerlink" href="#clocking-running-lfsr" title="Link to this heading">¶</a></h2>
 <table class="docutils align-right" id="id1">
-<caption><span class="caption-text"><strong>Clocking (running LFSR)</strong></span><a class="headerlink" href="#id1" title="Permalink to this table">¶</a></caption>
+<caption><span class="caption-text"><strong>Clocking (running LFSR)</strong></span><a class="headerlink" href="#id1" title="Link to this table">¶</a></caption>
 <colgroup>
-<col style="width: 38%" />
-<col style="width: 63%" />
+<col style="width: 37.5%" />
+<col style="width: 62.5%" />
 </colgroup>
 <thead>
 <tr class="row-odd"><th class="head"><p>Method</p></th>
@@ -128,12 +127,12 @@ Galois: <a class="reference external" href="https://en.wikipedia.org/wiki/Linear
 </table>
 </section>
 <section id="setters">
-<h2>Setters :<a class="headerlink" href="#setters" title="Permalink to this heading">¶</a></h2>
+<h2>Setters :<a class="headerlink" href="#setters" title="Link to this heading">¶</a></h2>
 <table class="docutils align-right" id="id2">
-<caption><span class="caption-text"><strong>Setting parameters</strong></span><a class="headerlink" href="#id2" title="Permalink to this table">¶</a></caption>
+<caption><span class="caption-text"><strong>Setting parameters</strong></span><a class="headerlink" href="#id2" title="Link to this table">¶</a></caption>
 <colgroup>
-<col style="width: 38%" />
-<col style="width: 63%" />
+<col style="width: 37.5%" />
+<col style="width: 62.5%" />
 </colgroup>
 <thead>
 <tr class="row-odd"><th class="head"><p>Method</p></th>
@@ -160,12 +159,12 @@ Galois: <a class="reference external" href="https://en.wikipedia.org/wiki/Linear
 </table>
 </section>
 <section id="getters">
-<h2>Getters:<a class="headerlink" href="#getters" title="Permalink to this heading">¶</a></h2>
+<h2>Getters:<a class="headerlink" href="#getters" title="Link to this heading">¶</a></h2>
 <table class="docutils align-right" id="id3">
-<caption><span class="caption-text"><strong>Fetching Attributes</strong></span><a class="headerlink" href="#id3" title="Permalink to this table">¶</a></caption>
+<caption><span class="caption-text"><strong>Fetching Attributes</strong></span><a class="headerlink" href="#id3" title="Link to this table">¶</a></caption>
 <colgroup>
-<col style="width: 38%" />
-<col style="width: 63%" />
+<col style="width: 37.5%" />
+<col style="width: 62.5%" />
 </colgroup>
 <thead>
 <tr class="row-odd"><th class="head"><p>Method</p></th>
@@ -207,12 +206,12 @@ Galois: <a class="reference external" href="https://en.wikipedia.org/wiki/Linear
 </table>
 </section>
 <section id="testing-lfsr-properties">
-<h2>Testing LFSR Properties:<a class="headerlink" href="#testing-lfsr-properties" title="Permalink to this heading">¶</a></h2>
+<h2>Testing LFSR Properties:<a class="headerlink" href="#testing-lfsr-properties" title="Link to this heading">¶</a></h2>
 <table class="docutils align-right" id="id4">
-<caption><span class="caption-text"><strong>Testing Properties of LFSR</strong></span><a class="headerlink" href="#id4" title="Permalink to this table">¶</a></caption>
+<caption><span class="caption-text"><strong>Testing Properties of LFSR</strong></span><a class="headerlink" href="#id4" title="Link to this table">¶</a></caption>
 <colgroup>
-<col style="width: 27%" />
-<col style="width: 73%" />
+<col style="width: 27.3%" />
+<col style="width: 72.7%" />
 </colgroup>
 <thead>
 <tr class="row-odd"><th class="head"><p>Method</p></th>
@@ -239,12 +238,12 @@ Galois: <a class="reference external" href="https://en.wikipedia.org/wiki/Linear
 </table>
 </section>
 <section id="displaying-printing">
-<h2>Displaying/printing:<a class="headerlink" href="#displaying-printing" title="Permalink to this heading">¶</a></h2>
+<h2>Displaying/printing:<a class="headerlink" href="#displaying-printing" title="Link to this heading">¶</a></h2>
 <table class="docutils align-right" id="id5">
-<caption><span class="caption-text"><strong>Displaying/printing</strong></span><a class="headerlink" href="#id5" title="Permalink to this table">¶</a></caption>
+<caption><span class="caption-text"><strong>Displaying/printing</strong></span><a class="headerlink" href="#id5" title="Link to this table">¶</a></caption>
 <colgroup>
-<col style="width: 27%" />
-<col style="width: 73%" />
+<col style="width: 27.3%" />
+<col style="width: 72.7%" />
 </colgroup>
 <thead>
 <tr class="row-odd"><th class="head"><p>Method</p></th>
@@ -271,13 +270,13 @@ Galois: <a class="reference external" href="https://en.wikipedia.org/wiki/Linear
 </table>
 </section>
 <section id="deprecated-replaced-methods">
-<h2>Deprecated/replaced methods :<a class="headerlink" href="#deprecated-replaced-methods" title="Permalink to this heading">¶</a></h2>
+<h2>Deprecated/replaced methods :<a class="headerlink" href="#deprecated-replaced-methods" title="Link to this heading">¶</a></h2>
 <p><em>These methods will be deprecated in future version 1.0.7</em></p>
 <table class="docutils align-right" id="id6">
-<caption><span class="caption-text"><strong>Deprecated methods for future version</strong></span><a class="headerlink" href="#id6" title="Permalink to this table">¶</a></caption>
+<caption><span class="caption-text"><strong>Deprecated methods for future version</strong></span><a class="headerlink" href="#id6" title="Link to this table">¶</a></caption>
 <colgroup>
-<col style="width: 27%" />
-<col style="width: 73%" />
+<col style="width: 27.3%" />
+<col style="width: 72.7%" />
 </colgroup>
 <thead>
 <tr class="row-odd"><th class="head"><p>Method</p></th>
@@ -302,7 +301,7 @@ Galois: <a class="reference external" href="https://en.wikipedia.org/wiki/Linear
 </section>
 </section>
 <section id="attributes">
-<h1>Attributes<a class="headerlink" href="#attributes" title="Permalink to this heading">¶</a></h1>
+<h1>Attributes<a class="headerlink" href="#attributes" title="Link to this heading">¶</a></h1>
 <dl class="simple">
 <dt>count<span class="classifier">int</span></dt><dd><p>Count the cycle, starts with 0 if counter_start_zero True, else starts with 1</p>
 </dd>
@@ -389,7 +388,64 @@ period will be 2^M -1</p>
 <li class="toctree-l1"><a class="reference internal" href="../matlab/index.html">Matlab Code</a></li>
 </ul>
 
+<!-- <a href="https://github.com/Nikeshbajaj/Linear_Feedback_Shift_Register/fork" class="github">
+    <img style="position: absolute; top: 0; right: 0; border: 0;" src="https://github.blog/wp-content/uploads/2008/12/forkme_right_red_aa0000.png?resize=149%2C149" alt="Fork me on GitHub"  class="github"/>
+</a> -->
 
+<a href="https://github.com/Nikeshbajaj/Linear_Feedback_Shift_Register/fork" class="github">
+    <img style="position: absolute; top: 0; right: 0; border: 0;" src="https://raw.githubusercontent.com/Nikeshbajaj/Linear_Feedback_Shift_Register/master/images/forkme_left_github_right_red.png?resize=149%2C149" alt="Fork me on GitHub"  class="github"/>
+</a>
+
+<!-- <div style="font-size: 20px;">
+    <hr>
+    <a href="https://github.com/Nikeshbajaj/Linear_Feedback_Shift_Register/discussions?discussions_q=" target="_blank">Discussion Forum</a>
+    <br>
+    <a href="https://github.com/Nikeshbajaj/Linear_Feedback_Shift_Register/issues" target="_blank">Report Issues</a>
+    <br>
+    <a href="https://github.com/Nikeshbajaj/Linear_Feedback_Shift_Register/discussions?discussions_q=" target="_blank">Suggestions</a>
+    <hr>
+</div> -->
+
+<!-- text-align:center; -->
+<!-- <hr style="width:100px; margin: auto;"> -->
+
+
+<div style="font-size: 20px; 
+padding: 5px; 
+border: 1px dashed rgb(181, 177, 177,0.5);
+border-radius: 0px; 
+margin: 4px;">
+    <!-- <hr> -->
+    <!-- <br> -->
+    <a href="https://github.com/Nikeshbajaj/Linear_Feedback_Shift_Register/discussions?discussions_q=" target="_blank">Discussion Forum</a>
+    <br>
+    <a href="https://github.com/Nikeshbajaj/Linear_Feedback_Shift_Register/issues" target="_blank">Report Issues</a>
+    <br>
+    <a href="https://github.com/Nikeshbajaj/Linear_Feedback_Shift_Register/discussions?discussions_q=" target="_blank">Suggestions</a>
+    <!-- <br>
+    <br> -->
+    <!-- <hr style="width:100px; margin: auto;"> -->
+</div>
+
+
+
+<!-- <div style="background: rgba(255, 255, 255, 0); 
+font-size: 20px; 
+padding: 5px; 
+border: 1px solid rgb(112, 112, 112);
+border-radius: 20px; 
+margin: 1px;">
+    <h5>
+    <a href="https://github.com/Nikeshbajaj/Linear_Feedback_Shift_Register/discussions?discussions_q=" target="_blank">Discussion Forum</a>
+    </h5>
+    <h5>
+        <a href="https://github.com/Nikeshbajaj/Linear_Feedback_Shift_Register/issues" target="_blank">Report Issues</a>
+    </h5>
+    <h5>
+        <a href="https://github.com/Nikeshbajaj/Linear_Feedback_Shift_Register/discussions?discussions_q=" target="_blank">Suggestions</a>
+    </h5>
+    
+</div> -->
 <div id="searchbox" style="display: none" role="search">
   <h3 id="searchlabel">Quick search</h3>
     <div class="searchformwrapper">
@@ -432,7 +488,6 @@ period will be 2^M -1</p>
     <script type="text/javascript" id="clstr_globe" src="//clustrmaps.com/globe.js?d=d2iVoHK-KcdA_ymLVqT1XrkhBh1rtJsJMuzLMBs0ZLY"></script>
     <!-- <a href="https://clustrmaps.com/site/1bu4a"  title="Visit tracker"><img src="//www.clustrmaps.com/map_v2.png?d=d2iVoHK-KcdA_ymLVqT1XrkhBh1rtJsJMuzLMBs0ZLY&cl=ffffff" /></a> -->
     <!-- <a href="https://clustrmaps.com/site/1bu4a"  title="Visit tracker"><img src="//www.clustrmaps.com/map_v2.png?d=d2iVoHK-KcdA_ymLVqT1XrkhBh1rtJsJMuzLMBs0ZLY&cl=ffffff" /></a> -->
-    From 20-05-2023
 </div>
         </div>
       </div>
@@ -442,18 +497,14 @@ period will be 2^M -1</p>
       &copy;2018, Nikesh Bajaj.
       
       |
-      Powered by <a href="http://sphinx-doc.org/">Sphinx 5.0.2</a>
-      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.12</a>
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 7.2.6</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.13</a>
       
       |
       <a href="../_sources/api_ref/api.rst.txt"
           rel="nofollow">Page source</a>
     </div>
 
-    
-    <a href="https://github.com/Nikeshbajaj/Linear_Feedback_Shift_Register" class="github">
-        <img style="position: absolute; top: 0; right: 0; border: 0;" src="https://s3.amazonaws.com/github/ribbons/forkme_right_darkblue_121621.png" alt="Fork me on GitHub"  class="github"/>
-    </a>
     
 
     

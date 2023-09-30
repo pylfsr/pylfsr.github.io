@@ -1,19 +1,18 @@
-
 <!DOCTYPE html>
 
-<html lang="en">
+<html lang="en" data-content_root="../">
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
     <title>Displaying &amp; Visualisation &#8212; PyLFSR 1.0 documentation</title>
-    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/pylfsr_alabaster.css" />
-    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
-    <script src="../_static/jquery.js"></script>
-    <script src="../_static/underscore.js"></script>
-    <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
-    <script src="../_static/doctools.js"></script>
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="../_static/pylfsr_alabaster.css?v=6c13f287" />
+    <script src="../_static/jquery.js?v=5d32c60e"></script>
+    <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+    <script src="../_static/documentation_options.js?v=46dfa7f5"></script>
+    <script src="../_static/doctools.js?v=888ff710"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="List of Methods" href="../methods/list_table.html" />
@@ -35,9 +34,9 @@
           <div class="body" role="main">
             
   <section id="displaying-visualisation">
-<h1>Displaying &amp; Visualisation<a class="headerlink" href="#displaying-visualisation" title="Permalink to this heading">¶</a></h1>
+<h1>Displaying &amp; Visualisation<a class="headerlink" href="#displaying-visualisation" title="Link to this heading">¶</a></h1>
 <section id="printing-displaying-info">
-<h2>Printing/displaying Info<a class="headerlink" href="#printing-displaying-info" title="Permalink to this heading">¶</a></h2>
+<h2>Printing/displaying Info<a class="headerlink" href="#printing-displaying-info" title="Link to this heading">¶</a></h2>
 <p>Current info</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span>  <span class="n">state</span> <span class="o">=</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">0</span><span class="p">]</span>
   <span class="n">fpoly</span> <span class="o">=</span> <span class="p">[</span><span class="mi">5</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">2</span><span class="p">]</span>
@@ -75,14 +74,14 @@
 </div>
 </section>
 <section id="parameters-setting">
-<h2>Parameters setting<a class="headerlink" href="#parameters-setting" title="Permalink to this heading">¶</a></h2>
+<h2>Parameters setting<a class="headerlink" href="#parameters-setting" title="Link to this heading">¶</a></h2>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="nb">repr</span><span class="p">(</span><span class="n">L</span><span class="p">)</span>
 </pre></div>
 </div>
 <p>“LFSR(‘fpoly’=[5, 4, 3, 2], ‘initstate’=[0, 0, 0, 1, 0],’conf’=fibonacci, ‘seq_bit_index’=-1,’verbose’=True, ‘counter_start_zero’=True)”</p>
 </section>
 <section id="visualise-lfsr">
-<h2>Visualise LFSR<a class="headerlink" href="#visualise-lfsr" title="Permalink to this heading">¶</a></h2>
+<h2>Visualise LFSR<a class="headerlink" href="#visualise-lfsr" title="Link to this heading">¶</a></h2>
 <p><strong>Plotting LFSR with pylsr</strong></p>
 <p>Each LFSR can be visualize as it in current state by using <em>.Viz()</em> method</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">L</span> <span class="o">=</span> <span class="n">LFSR</span><span class="p">(</span><span class="n">initstate</span><span class="o">=</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">],</span><span class="n">fpoly</span><span class="o">=</span><span class="p">[</span><span class="mi">5</span><span class="p">,</span><span class="mi">2</span><span class="p">])</span>
@@ -93,7 +92,7 @@
 <img alt="https://raw.githubusercontent.com/nikeshbajaj/Linear_Feedback_Shift_Register/master/images/5bit_1.jpg" src="https://raw.githubusercontent.com/nikeshbajaj/Linear_Feedback_Shift_Register/master/images/5bit_1.jpg" />
 </section>
 <section id="dynamic-visualisation-of-lfsr-animation">
-<h2>Dynamic visualisation of LFSR - Animation<a class="headerlink" href="#dynamic-visualisation-of-lfsr-animation" title="Permalink to this heading">¶</a></h2>
+<h2>Dynamic visualisation of LFSR - Animation<a class="headerlink" href="#dynamic-visualisation-of-lfsr-animation" title="Link to this heading">¶</a></h2>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">%</span><span class="n">matplotlib</span> <span class="n">notebook</span>
 <span class="n">L</span> <span class="o">=</span> <span class="n">LFSR</span><span class="p">(</span><span class="n">initstate</span><span class="o">=</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">],</span><span class="n">fpoly</span><span class="o">=</span><span class="p">[</span><span class="mi">5</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">2</span><span class="p">],</span><span class="n">counter_start_zero</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
 </pre></div>
@@ -115,7 +114,7 @@
 <img alt="https://raw.githubusercontent.com/nikeshbajaj/Linear_Feedback_Shift_Register/master/images/GaloisLFSR_1.gif" src="https://raw.githubusercontent.com/nikeshbajaj/Linear_Feedback_Shift_Register/master/images/GaloisLFSR_1.gif" />
 </section>
 <section id="show-each-state-and-each-cycle">
-<h2>Show each state and each cycle<a class="headerlink" href="#show-each-state-and-each-cycle" title="Permalink to this heading">¶</a></h2>
+<h2>Show each state and each cycle<a class="headerlink" href="#show-each-state-and-each-cycle" title="Link to this heading">¶</a></h2>
 <p><strong>Setting clock start:</strong></p>
 <blockquote>
 <div><p>Initial output bit
@@ -134,7 +133,7 @@ when setting <em>counter_start_zero = False</em>, there will be one extra bit, s
 <em>counter_start_zero=True</em> can be seen as dealyed response by one bit.</p>
 </section>
 <section id="visualise-3-bit-lfsr">
-<h2>Visualise 3-bit LFSR<a class="headerlink" href="#visualise-3-bit-lfsr" title="Permalink to this heading">¶</a></h2>
+<h2>Visualise 3-bit LFSR<a class="headerlink" href="#visualise-3-bit-lfsr" title="Link to this heading">¶</a></h2>
 <p><strong>At each step, with default ‘counter_start_zero = True’</strong></p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">state</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">]</span>
 <span class="n">fpoly</span> <span class="o">=</span> <span class="p">[</span><span class="mi">3</span><span class="p">,</span><span class="mi">2</span><span class="p">]</span>
@@ -271,7 +270,64 @@ when setting <em>counter_start_zero = False</em>, there will be one extra bit, s
 <li class="toctree-l1"><a class="reference internal" href="../matlab/index.html">Matlab Code</a></li>
 </ul>
 
+<!-- <a href="https://github.com/Nikeshbajaj/Linear_Feedback_Shift_Register/fork" class="github">
+    <img style="position: absolute; top: 0; right: 0; border: 0;" src="https://github.blog/wp-content/uploads/2008/12/forkme_right_red_aa0000.png?resize=149%2C149" alt="Fork me on GitHub"  class="github"/>
+</a> -->
 
+<a href="https://github.com/Nikeshbajaj/Linear_Feedback_Shift_Register/fork" class="github">
+    <img style="position: absolute; top: 0; right: 0; border: 0;" src="https://raw.githubusercontent.com/Nikeshbajaj/Linear_Feedback_Shift_Register/master/images/forkme_left_github_right_red.png?resize=149%2C149" alt="Fork me on GitHub"  class="github"/>
+</a>
+
+<!-- <div style="font-size: 20px;">
+    <hr>
+    <a href="https://github.com/Nikeshbajaj/Linear_Feedback_Shift_Register/discussions?discussions_q=" target="_blank">Discussion Forum</a>
+    <br>
+    <a href="https://github.com/Nikeshbajaj/Linear_Feedback_Shift_Register/issues" target="_blank">Report Issues</a>
+    <br>
+    <a href="https://github.com/Nikeshbajaj/Linear_Feedback_Shift_Register/discussions?discussions_q=" target="_blank">Suggestions</a>
+    <hr>
+</div> -->
+
+<!-- text-align:center; -->
+<!-- <hr style="width:100px; margin: auto;"> -->
+
+
+<div style="font-size: 20px; 
+padding: 5px; 
+border: 1px dashed rgb(181, 177, 177,0.5);
+border-radius: 0px; 
+margin: 4px;">
+    <!-- <hr> -->
+    <!-- <br> -->
+    <a href="https://github.com/Nikeshbajaj/Linear_Feedback_Shift_Register/discussions?discussions_q=" target="_blank">Discussion Forum</a>
+    <br>
+    <a href="https://github.com/Nikeshbajaj/Linear_Feedback_Shift_Register/issues" target="_blank">Report Issues</a>
+    <br>
+    <a href="https://github.com/Nikeshbajaj/Linear_Feedback_Shift_Register/discussions?discussions_q=" target="_blank">Suggestions</a>
+    <!-- <br>
+    <br> -->
+    <!-- <hr style="width:100px; margin: auto;"> -->
+</div>
+
+
+
+<!-- <div style="background: rgba(255, 255, 255, 0); 
+font-size: 20px; 
+padding: 5px; 
+border: 1px solid rgb(112, 112, 112);
+border-radius: 20px; 
+margin: 1px;">
+    <h5>
+    <a href="https://github.com/Nikeshbajaj/Linear_Feedback_Shift_Register/discussions?discussions_q=" target="_blank">Discussion Forum</a>
+    </h5>
+    <h5>
+        <a href="https://github.com/Nikeshbajaj/Linear_Feedback_Shift_Register/issues" target="_blank">Report Issues</a>
+    </h5>
+    <h5>
+        <a href="https://github.com/Nikeshbajaj/Linear_Feedback_Shift_Register/discussions?discussions_q=" target="_blank">Suggestions</a>
+    </h5>
+    
+</div> -->
 <div id="searchbox" style="display: none" role="search">
   <h3 id="searchlabel">Quick search</h3>
     <div class="searchformwrapper">
@@ -314,7 +370,6 @@ when setting <em>counter_start_zero = False</em>, there will be one extra bit, s
     <script type="text/javascript" id="clstr_globe" src="//clustrmaps.com/globe.js?d=d2iVoHK-KcdA_ymLVqT1XrkhBh1rtJsJMuzLMBs0ZLY"></script>
     <!-- <a href="https://clustrmaps.com/site/1bu4a"  title="Visit tracker"><img src="//www.clustrmaps.com/map_v2.png?d=d2iVoHK-KcdA_ymLVqT1XrkhBh1rtJsJMuzLMBs0ZLY&cl=ffffff" /></a> -->
     <!-- <a href="https://clustrmaps.com/site/1bu4a"  title="Visit tracker"><img src="//www.clustrmaps.com/map_v2.png?d=d2iVoHK-KcdA_ymLVqT1XrkhBh1rtJsJMuzLMBs0ZLY&cl=ffffff" /></a> -->
-    From 20-05-2023
 </div>
         </div>
       </div>
@@ -324,18 +379,14 @@ when setting <em>counter_start_zero = False</em>, there will be one extra bit, s
       &copy;2018, Nikesh Bajaj.
       
       |
-      Powered by <a href="http://sphinx-doc.org/">Sphinx 5.0.2</a>
-      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.12</a>
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 7.2.6</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.13</a>
       
       |
       <a href="../_sources/viz/index.rst.txt"
           rel="nofollow">Page source</a>
     </div>
 
-    
-    <a href="https://github.com/Nikeshbajaj/Linear_Feedback_Shift_Register" class="github">
-        <img style="position: absolute; top: 0; right: 0; border: 0;" src="https://s3.amazonaws.com/github/ribbons/forkme_right_darkblue_121621.png" alt="Fork me on GitHub"  class="github"/>
-    </a>
     
 
     
