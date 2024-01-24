@@ -98,7 +98,45 @@ Geffe Genrator and many more. A generated sequence can be tested across differen
 <span class="mi">01000010010110011111000110111010100001001</span>
 </pre></div>
 </div>
-<a class="reference internal image-reference" href="https://github.com/Nikeshbajaj/Linear_Feedback_Shift_Register/blob/master/images/L_p53_1.png?raw=true"><img alt="https://github.com/Nikeshbajaj/Linear_Feedback_Shift_Register/blob/master/images/L_p53_1.png?raw=true" src="https://github.com/Nikeshbajaj/Linear_Feedback_Shift_Register/blob/master/images/L_p53_1.png?raw=true" style="width: 80%;" /></a>
+<a class="reference internal image-reference" href=""><img alt="https://github.com/Nikeshbajaj/Linear_Feedback_Shift_Register/blob/master/images/L_p53_1.png?raw=true" src="https://github.com/Nikeshbajaj/Linear_Feedback_Shift_Register/blob/master/images/L_p53_1.png?raw=true" style="width: 80%;" /></a>
+
+<br><br>
+<div class="box" style="padding: 10px; border: 1px solid rgb(204, 27, 27);">
+  <b><u>NOTE</u> on visualization: </b> Feedback bit shown in figure (while visualizing), is feedback computed from previous state, NOT from current state.
+  Check visualization section for more details<br>
+  </div>
+
+<!-- <i><b><mark>NOTE:</mark></b> Feedback bit shown in figure (while visualizing), is feedback computed from previous state, NOT of current state.</i> Check visualization section for more details. -->
+<br>
+<br>
+<hr>
+<br>
+A simple example for <b>Galois LFSR</b> is:
+<div class="highlight-python notranslate"><div class="highlight"><pre>
+import numpy as np
+from pylfsr import LFSR
+
+state = [1,1,0,1,1]
+fpoly = [5,3]
+L = LFSR(fpoly=fpoly,initstate =state,<mark>conf='galois'</mark>)
+L.next()
+L.Viz()
+</pre>
+</div>
+
+<img alt="" src="https://raw.githubusercontent.com/nikeshbajaj/Linear_Feedback_Shift_Register/master/images/5bit_Galois_1.png?raw=true" style="width: 80%;" />
+
+<table class="docutils align-default">
+<tbody>
+  <tr class="row-odd"><td><figure class="align-default">
+  <img alt="" src="https://raw.githubusercontent.com/nikeshbajaj/Linear_Feedback_Shift_Register/master/images/GaloisLFSR_1.gif" />
+  </figure>
+  </td>
+  </tr>
+  </tbody>
+</table>
+
+
 <p><span class="raw-html"><br/></span>
 <span class="raw-html"><hr></span></p>
 <p><strong>Authors/Contacts:</strong></p>

@@ -90,11 +90,47 @@
 </pre></div>
 </div>
 <img alt="https://raw.githubusercontent.com/nikeshbajaj/Linear_Feedback_Shift_Register/master/images/5bit_1.jpg" src="https://raw.githubusercontent.com/nikeshbajaj/Linear_Feedback_Shift_Register/master/images/5bit_1.jpg" />
+
+<br><br>
+<div class="box" style="padding: 10px; border: 2px solid red;">
+<b><u>NOTE</u> on visualization: </b> Feedback bit shown in figure (while visualizing), is feedback computed from previous state, NOT from current state.
+<br>
+In figure above, feedback bit 0 is XOR of 0 and 0 which were bits at 5th and 2th regiter in previous state, NOT XOR of 1, and 1 of current state. 
+This is why, <b>Feedback bit is same as left-most bit in LFSR</b> all the time. (will be changed in future version! #TODO)
+<br>
+</div>
 </section>
+
+<section id="visualise-lfsr-static">
+<h2>Only Plotting LFSR<a class="headerlink" href="#visualise-lfsr-static" title="Link to this heading">¶</a></h2>
+You could plot LFSR without using any computational part of <i>pylfsr</i>
+<pre><code class="python">
+import pylfsr
+pylfsr.dispLFSR(state=[1,1,1,1,1],fpoly=[5,2],conf='fibonacci',
+        seq='',ob=1,fb=0,out_bit_index=-1)</code>
+</pre>
+
+<img alt="Fibbonaci LFSR" src="https://raw.githubusercontent.com/nikeshbajaj/Linear_Feedback_Shift_Register/master/images/5bit_fib_1_only.png" />
+
+Here, <code>ob</code> is output-bit, <code>fb</code> is feedback-bit, <code>out_bit_index</code> is idex of register for output bit 
+
+<pre>
+
+pylfsr.dispLFSR(state=[1,1,1,1,1],fpoly=[5,2],
+          conf='galois',seq='',ob=1,fb=1,out_bit_index=-1)
+</pre>
+
+<img alt="Galois LFSR" src="https://raw.githubusercontent.com/nikeshbajaj/Linear_Feedback_Shift_Register/master/images/5bit_galois_1_only.png" />
+
+
+
+</section>
+
 <section id="dynamic-visualisation-of-lfsr-animation">
 <h2>Dynamic visualisation of LFSR - Animation<a class="headerlink" href="#dynamic-visualisation-of-lfsr-animation" title="Link to this heading">¶</a></h2>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">%</span><span class="n">matplotlib</span> <span class="n">notebook</span>
-<span class="n">L</span> <span class="o">=</span> <span class="n">LFSR</span><span class="p">(</span><span class="n">initstate</span><span class="o">=</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">],</span><span class="n">fpoly</span><span class="o">=</span><span class="p">[</span><span class="mi">5</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">2</span><span class="p">],</span><span class="n">counter_start_zero</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+<span class="n">L</span> <span class="o">=</span> <span class="n">LFSR</span><span class="p">(</span><span class="n">initstate</span><span class="o">=</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">],</span><span class="n">fpoly</span><span class="o">=</span><span class="p">[</span><span class="mi">5</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">2</span><span class="p">],</span><span class="n">
+         counter_start_zero</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
 </pre></div>
 </div>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">8</span><span class="p">,</span><span class="mi">3</span><span class="p">))</span>
